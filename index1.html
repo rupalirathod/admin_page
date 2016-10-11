@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CCD Admin Page</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="node_modules/angular-material/angular-material.css">
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-aria/angular-aria.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.js"></script>
+    <script src="node_modules/angular-material/angular-material.js"></script>
+    <script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="js/script.js"></script>
+</head>
+
+<body ng-app="myApp">
+    <div class="container">
+        <div class="row">
+            <header>
+                <section class="col-md-10">
+                    <h1>CCD Status</h1>
+                </section>
+                <section class="col-md-2">
+                    <p class="welcome-role">Welcome, Admin</p>
+                </section>
+            </header>
+
+        </div>
+        <div class="row">
+            <section class="col-md-12">
+                <div ng-controller="tabCtrl" layout="column" class="demo">
+
+                    <script type="text/ng-template" id="partials/view1.html"> Site #1</script>
+                    <script type="text/ng-template" id="partials/view2.html"> Site #2 </script>
+                    <md-toolbar>
+                        <h2 class="md-toolbar-tools" ng-click="isCollapisCollapsed = !isCollapsedsed">
+                            <span>Toolbar</span>
+                        </h2>
+                    </md-toolbar>
+                    <md-tabs md-stretch-tabs md-selected="selectedIndex" collapse="isCollapsed = true">
+                        <md-tab label="Site #1"></md-tab>
+                        <md-tab label="Site #2"></md-tab>
+                    </md-tabs>
+
+                    <div id="content" ui-view flex> </div>
+
+                </div>
+            </section>
+
+        </div>
+    </div>
+</body>
+
+</html>

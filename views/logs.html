@@ -1,0 +1,32 @@
+<div>
+
+    <h3 class="log-title">Logs</h3>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <ul class="logs-grid">
+                    <li><a>CCD-Web-Server</a></li>
+                    <li><a>WorkFlow Engine</a></li>
+                    <li><a>A&AI Mediator</a></li>
+                    <li><a>Blueprint generator</a></li>
+                    <li><a>MSO-Deployer</a></li>
+                    <li><a>uPCE Orchestrator</a></li>
+                    <li><a>Catalog</a></li>
+                    <li><a>Validator</a></li>
+                    <li><a>Task-Dispatcher</a></li>
+                </ul>
+            </div>
+            <div class="col-md-9">
+                <!--<div class="gridStyle" ng-grid="gridOptions"></div>-->
+                <table>
+                    <tr>
+                        <td>{{ccdmodules.logFileName}}</td>
+                    </tr>
+                    <tr>
+                        <td ng-repeat=>{{ccdmodules.logEvents.isDateFlag}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

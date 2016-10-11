@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CCD Admin Page</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="node_modules/angular-material/angular-material.css">
+    <link rel="stylesheet" href="node_modules/angular-toggle-switch/angular-toggle-switch.css">
+    <link rel="stylesheet" href="node_modules/angular-toggle-switch/angular-toggle-switch-bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ng-grid/2.0.11/ng-grid.css" type="text/css">
+    <link rel="stylesheet" href="css/tooltip.css">
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-aria/angular-aria.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.js"></script>
+    <script src="node_modules/angular-material/angular-material.js"></script>
+    <script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="node_modules/angular-toggle-switch/angular-toggle-switch.js"></script>
+    <script src="node_modules/ng-grid/lib/jquery-1.9.1.js"></script>
+    <script src="node_modules/ng-grid/build/ng-grid.debug.js"></script>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/stylesheet.css">
+
+</head>
+
+<body ng-app="myApp">
+    <div class="container">
+        <div ng-include="'views/header.html'"> </div>
+        <div class="row">
+            <section class="col-md-12">
+                <div class="page main-content-holder {{pageClass}}" ui-view></div>
+            </section>
+        </div>
+    </div>
+</body>
+
+</html>

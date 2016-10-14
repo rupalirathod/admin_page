@@ -1,4 +1,5 @@
-var app = angular.module('myApp', ['ngMaterial', 'ui.router', 'toggle-switch', 'ngGrid']);
+var app = angular.module('myApp', ['ngMaterial', 'ui.router', 'toggle-switch', 'ui.grid']);
+
 app.config(function($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise('/home');
@@ -27,11 +28,18 @@ app.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: "../views/ccd_1702.html",
             controller: 'ccd1702Controller'
         })
-        .state('logs', {
-            url: "/logs",
+        .state('logs',{
+            url: "/logs/:releaseNumber/:env",
             controller: 'logsController',
             templateUrl: "../views/logs.html"
         })
+
+        .state('logs.component',{
+            url: "/:component",
+            controller: 'componentsController',
+            templateUrl: "../views/component.html"
+        })
+
         /*
         .state('logs.component',{
             url: "logs/:releaseNumber/:env/:component",
@@ -47,6 +55,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
 
 })
+
 app.controller('homeController', ['$scope', '$http', function($scope, $http) {
     $http.get('logfile_linecount.2016-10-03.json')
         .then(function(res) {
@@ -108,17 +117,3 @@ app.controller('ccd1702Controller', function($scope, $http) {
     }
 });
 
-
-app.controller('logsController', function($scope, $http, $stateParams) {
-
-    console.log($stateParams);
-
-    $http.get('http://mtanjv9ccda01.aic.cip.att.com:8445/generateLogDesc/blueprint')
-        .then(function(res) {
-            $scope.ccdmodules = res.data;
-            console.log(res.data);
-
-        });
-
-    // $scope.gridOptions = { data: $scope.ccdmodules };
-});

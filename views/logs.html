@@ -1,32 +1,17 @@
 <div>
 
-    <h3 class="log-title">Logs</h3>
+    <h3 class="log-title">Logs <small>{{releaseNumber}} - {{env}}</small></h3>
     <div class="container">
         <div class="row">
             <div class="col-md-3">
                 <ul class="logs-grid">
-                    <li><a>CCD-Web-Server</a></li>
-                    <li><a>WorkFlow Engine</a></li>
-                    <li><a>A&AI Mediator</a></li>
-                    <li><a>Blueprint generator</a></li>
-                    <li><a>MSO-Deployer</a></li>
-                    <li><a>uPCE Orchestrator</a></li>
-                    <li><a>Catalog</a></li>
-                    <li><a>Validator</a></li>
-                    <li><a>Task-Dispatcher</a></li>
+                    <li ng-repeat="component in components">
+                        <a ui-sref="logs.component({releaseNumber: releaseNumber, env: env, component: component.componentName})" ui-sref-active="active-component">{{component.componentName}}</a>
+                    </li>
                 </ul>
             </div>
             <div class="col-md-9">
-                <ui-view>
-                <!--<div class="gridStyle" ng-grid="gridOptions"></div>-->
-                <table>
-                    <tr>
-                        <td>{{ccdmodules.logFileName}}</td>
-                    </tr>
-                    <tr>
-                        <td ng-repeat=>{{ccdmodules.logEvents.isDateFlag}}</td>
-                    </tr>
-                </table>
+                <div ui-view></div>
             </div>
         </div>
     </div>

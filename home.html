@@ -1,4 +1,4 @@
-<div>
+<div> 
     <h3 class="home-title">Version Status</h3>
     <table id="home-menu">
         <tr>
@@ -6,23 +6,20 @@
             <td><span class="status">Status</span></td>
         </tr>
         <tr>
-            <td><a ui-sref="logs" target="_blank">1702 DEV</a></td>
+            <td><a ui-sref="logs({releaseNumber: 1702, env: 'DEV'})">1702 DEV</a></td>
             <td><span class="status">Under Construction</span></td>
         </tr>
         <tr>
-            <td><a ui-sref="logs" target="_blank">1610 E2E</a></td>
+            <td><a ui-sref="logs({releaseNumber: 1610, env: 'E2E'})">1610 E2E</a></td>
             <td><span class="status">On E2E</span></td>
         </tr>
         <tr>
-            <td><a ui-sref="logs" target="_blank">1610 IST</a></td>
+            <td><a ui-sref="logs({releaseNumber: 1610, env: 'IST'})">1610 IST</a></td>
             <td><span class="status">On IST</span></td>
         </tr>
         <tr>
-            <td><a ui-sref="logs" target="_blank">1607 PVT</a></td>
+            <td><a ui-sref="logs({releaseNumber: 1607, env: 'PVT'})">1607 PVT</a></td>
             <td><span class="status">Currently Active</span></td>
         </tr>
     </table>
-
-
 </div>
-<div ui-view=logsView></div>

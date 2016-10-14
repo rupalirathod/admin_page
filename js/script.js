@@ -31,7 +31,19 @@ app.config(function($stateProvider, $urlRouterProvider) {
             url: "/logs",
             controller: 'logsController',
             templateUrl: "../views/logs.html"
-        });
+        })
+        /*
+        .state('logs.component',{
+            url: "logs/:releaseNumber/:env/:component",
+            controller: 'logsController',
+            templateUrl: "../views/logs.html"
+        })
+        .state('logs',{
+            url: "logs/:releaseNumber/:env",
+            controller: 'logsController',
+            templateUrl: "../views/logs.html"
+        })*/
+        ;
 
 
 })
@@ -97,7 +109,10 @@ app.controller('ccd1702Controller', function($scope, $http) {
 });
 
 
-app.controller('logsController', function($scope, $http) {
+app.controller('logsController', function($scope, $http, $stateParams) {
+
+    console.log($stateParams);
+
     $http.get('http://mtanjv9ccda01.aic.cip.att.com:8445/generateLogDesc/blueprint')
         .then(function(res) {
             $scope.ccdmodules = res.data;

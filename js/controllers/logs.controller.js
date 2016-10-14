@@ -9,8 +9,6 @@
 
     function controller($scope, $stateParams, DataService) {
         
-        console.log($stateParams);
-
         $scope.releaseNumber = $stateParams.releaseNumber;
         $scope.env = $stateParams.env;
 

@@ -23,6 +23,7 @@
         function getLogFiles(releaseNumber, env, component) { 
             /* Replace by final endpoint passing releaseNumber, env and component as parameters*/
             return $http.get('json_samples/logFiles.json');
+            // return $http.get('http://whatever.com/something?releaseNumber=' + releaseNumber);
         }
 
     }

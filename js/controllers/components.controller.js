@@ -9,21 +9,20 @@
 
     function controller($scope, $stateParams, DataService) {
         
-        console.log($stateParams);
 
         $scope.releaseNumber = $stateParams.releaseNumber;
         $scope.env = $stateParams.env;
         $scope.component = $stateParams.component;
         
-        $scope.logFiles = DataService.getLogFiles($scope.releaseNumber, $scope.env, $scope.component);
+        $scope.logFiles = '';
         
-        $scope.gridOptions = { data: [
-            { data: 'test1' },
-            { data: 'test1' },
-            { data: 'test1' },
-            { data: 'test1' },
-            { data: 'test1' },
-        ] };
+        $scope.gridOptions = { 
+            columnDefs: [ 
+                { name: 'eventTime'},
+                { name: 'eventType' },
+                { name: 'eventDescription' }
+            ]  
+        };
 
 
         // Keep your initialization data on this function:
@@ -32,13 +31,12 @@
         function activate() { 
 
 
-            // DataService.getLogFiles($scope.releaseNumber, $scope.env, $scope.component).then(function(response){
-            //     $scope.logFiles = response.data;
-            //     console.log(response.data);
-            //     if (!$scope.$$phase) {
-            //         $scope.$apply();
-            //     } 
-            // })
+            DataService.getLogFiles($scope.releaseNumber, $scope.env, $scope.component).then(function(response){
+
+                $scope.gridOptions.data = response.data.logEvents;
+                $scope.logFileName = response.data.logFileName;
+                $scope.logFileLink = response.data.logFileName;
+            })
         }
     }
 })();

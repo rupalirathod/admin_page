@@ -1,4 +1,4 @@
-var app = angular.module('myApp', ['ngMaterial', 'ui.router', 'toggle-switch', 'ngGrid']);
+var app = angular.module('myApp', ['ngMaterial', 'ui.router', 'toggle-switch', 'ui.grid']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
 

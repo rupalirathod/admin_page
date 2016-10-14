@@ -1,12 +1,12 @@
 <div>
 
-    <h3 class="log-title">Logs</h3>
+    <h3 class="log-title">Logs <small>{{releaseNumber}} - {{env}}</small></h3>
     <div class="container">
         <div class="row">
             <div class="col-md-3">
                 <ul class="logs-grid">
                     <li ng-repeat="component in components">
-                        <a ui-sref="logs.component({releaseNumber: 1702, env: 'DEV', component: component.componentName})">{{component.componentName}}</a>
+                        <a ui-sref="logs.component({releaseNumber: releaseNumber, env: env, component: component.componentName})" ui-sref-active="active-component">{{component.componentName}}</a>
                     </li>
                 </ul>
             </div>

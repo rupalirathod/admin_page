@@ -32,7 +32,7 @@
                     <h3>1607 CCD DEV</h3>
                     <ul class="tt-wrapper">
                         <li ng-repeat="ccdmodule in ccdmodules " ng-model="logged " ng-init="logged=false ">
-                            <a class="tt-dribbble" ui-sref=".logs " target="_blank " data-title="{{ccdmodule.description}} " ng-click="logged=true ">
+                            <a class="tt-dribbble" ui-sref="logs.component({releaseNumber: '1607', env: 'DEV', component: ccdmodule.name})" data-title="{{ccdmodule.description}} " ng-click="logged=true ">
                                 <i ng-class="{ 'green-sign':ccdmodule.working==='yes' , 'red-sign': ccdmodule.working==='no' , 'orange-sign': ccdmodule.working==='notsure' } "></i> {{ccdmodule.name}}<span></span>
                             </a>
 
@@ -45,7 +45,7 @@
                     <h3>1607 CCD IST</h3>
                     <ul>
                         <li ng-repeat="ccdmodule in ccdmodules " ng-model="logged " ng-init="logged=false ">
-                            <a ui-sref=".logs " target="_blank " title="{{ccdmodule.description}} " ng-click="logged=true ">
+                            <a ui-sref="logs.component({releaseNumber: '1607', env: 'IST', component: ccdmodule.name})" title="{{ccdmodule.description}} " ng-click="logged=true ">
                                 <i ng-class="{ 'green-sign':ccdmodule.working==='yes' , 'red-sign': ccdmodule.working==='no' , 'orange-sign': ccdmodule.working==='notsure' } "></i> {{ccdmodule.name}}
                             </a>
 
@@ -57,7 +57,7 @@
                     <h3>1607 CCD E2E</h3>
                     <ul>
                         <li ng-repeat="ccdmodule in ccdmodules " ng-model="logged " ng-init="logged=false ">
-                            <a ui-sref=".logs " target="_blank " title="{{ccdmodule.description}} " data-toggle="tooltip " ng-click="logged=true ">
+                            <a ui-sref="logs.component({releaseNumber: '1607', env: 'E2E', component: ccdmodule.name})" title="{{ccdmodule.description}} " data-toggle="tooltip " ng-click="logged=true ">
                                 <i ng-class="{ 'green-sign':ccdmodule.working==='yes' , 'red-sign': ccdmodule.working==='no' , 'orange-sign': ccdmodule.working==='notsure' } "></i> {{ccdmodule.name}}
                             </a>
 
@@ -69,7 +69,7 @@
                     <h3>1607 CCD Production</h3>
                     <ul>
                         <li ng-repeat="ccdmodule in ccdmodules " ng-model="logged " ng-init="logged=false ">
-                            <a ui-sref=".logs " target="_blank " title="{{ccdmodule.description}} " data-toggle="tooltip " ng-click="logged=true ">
+                            <a  ui-sref="logs.component({releaseNumber: '1607', env: 'Production', component: ccdmodule.name})" title="{{ccdmodule.description}} " data-toggle="tooltip " ng-click="logged=true ">
                                 <i ng-class="{ 'green-sign':ccdmodule.working==='yes' , 'red-sign': ccdmodule.working==='no' , 'orange-sign': ccdmodule.working==='notsure' } "></i> {{ccdmodule.name}}
                             </a>
 

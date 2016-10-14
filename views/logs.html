@@ -5,28 +5,13 @@
         <div class="row">
             <div class="col-md-3">
                 <ul class="logs-grid">
-                    <li><a>CCD-Web-Server</a></li>
-                    <li><a>WorkFlow Engine</a></li>
-                    <li><a>A&AI Mediator</a></li>
-                    <li><a>Blueprint generator</a></li>
-                    <li><a>MSO-Deployer</a></li>
-                    <li><a>uPCE Orchestrator</a></li>
-                    <li><a>Catalog</a></li>
-                    <li><a>Validator</a></li>
-                    <li><a>Task-Dispatcher</a></li>
+                    <li ng-repeat="component in components">
+                        <a ui-sref="logs.component({releaseNumber: 1702, env: 'DEV', component: component.componentName})">{{component.componentName}}</a>
+                    </li>
                 </ul>
             </div>
             <div class="col-md-9">
-                <ui-view>
-                <!--<div class="gridStyle" ng-grid="gridOptions"></div>-->
-                <table>
-                    <tr>
-                        <td>{{ccdmodules.logFileName}}</td>
-                    </tr>
-                    <tr>
-                        <td ng-repeat=>{{ccdmodules.logEvents.isDateFlag}}</td>
-                    </tr>
-                </table>
+                <div ui-view></div>
             </div>
         </div>
     </div>

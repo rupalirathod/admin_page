@@ -43,7 +43,7 @@ header {
 }
 
 #home-menu {
-    color: #fff;
+    color: #00907c !important;
     margin: 0 auto;
     font-size: 15px;
 }
@@ -79,7 +79,7 @@ header {
 
 .main-content-holder {
     background: #999999;
-    height: 400px;
+    height: 490px;
 }
 
 .page {
@@ -88,32 +88,31 @@ header {
     top: 85%;
     width: 100%;
     border-radius: 15px;
-    background: rgba(37, 174, 228, 0.5);
+    background: #fffddb;
+    border: 3px solid #f5f3bb;
 }
 
 .page-ccd1607,
 .page-ccd1610,
 .page-ccd1702,
 .page-home {
+    background: #fffddb;
     border-radius: 10px;
 }
 
 .page-home {
-    background: rgba(37, 174, 228, 0.5);
+    color: #00907c !important;
 }
 
 .page-ccd1610 {
-    background: rgba(0, 209, 188, 0.3);
-    color: #00907c;
+    color: #00907c !important;
 }
 
 .page-ccd1607 {
-    background: rgba(100, 231, 80, 0.49);
     color: #a55400 !important;
 }
 
 .page-ccd1702 {
-    background: rgba(231, 82, 80, 0.69);
     color: #9e0000 !important;
 }
 
@@ -394,7 +393,7 @@ header {
 }
 
 .logs-grid {
-    color: #fff;
+    color: #00907c !important;
     padding: 0 15px;
 }
 
@@ -414,9 +413,11 @@ header {
 }
 
 .gridStyle {
-    border: 1px solid rgb(212, 212, 212);
-    width: 925px;
-    height: 300px;
+    background: #fff;
+}
+
+.active-component {
+    text-decoration: underline;
 }
 
 
@@ -535,6 +536,50 @@ header {
     display: inline-block;
 }
 
+.front-title-green,
+.front-title-green-lite,
+.front-title-mustard,
+.front-title-mustard-lite,
+.front-title-red,
+.front-title-red-lite,
+.front-title-purple,
+.front-title-purple-lite {
+    color: #ffffff;
+    padding: 5px 0 5px 5px;
+}
+
+.front-title-green {
+    background: #7fb800;
+}
+
+.front-title-green-lite {
+    background: #99db00;
+}
+
+.front-title-mustard {
+    background: #ffb400;
+}
+
+.front-title-mustard-lite {
+    background: #ffc849;
+}
+
+.front-title-red {
+    background: #e71f1f;
+}
+
+.front-title-red-lite {
+    background: #f75d5d;
+}
+
+.front-title-purple {
+    background: #ac5683;
+}
+
+.front-title-purple-lite {
+    background: #d673a6;
+}
+
 .frontholder,
 .backholder {
     position: absolute;
@@ -545,15 +590,17 @@ header {
 .front {
     -webkit-transform: rotateY(0deg);
     -ms-transform: rotateY(0deg);
-    background: lightgreen;
     z-index: 2;
 }
 
 .back {
-    background: lightblue;
     -webkit-transform: rotateY(-180deg);
     -moz-transform: rotateY(-180deg);
     -o-transform: rotateY(-180deg);
     -ms-transform: rotateY(-180deg);
     transform: rotateY(-180deg);
+}
+
+.top-space {
+    margin-top: 25px;
 }

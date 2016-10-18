@@ -1,13 +1,13 @@
 <div>
     <!--<button value="Site 1"></button>-->
-    <div>
+    <!--<div>
         <md-switch class="align-center" ng-click="flipOption()" ng-model="data.s" ng-true-value="'Site 1'" ng-false-value="'Site 2'" class="md-warn">
             <!--<label ng-show="{'clicked': flip}">Site 1</label>
         <label ng-show="{'clicked': !flip}">Site 2</label>-->
-            <label class="site-label">{{data.s}}</label>
+    <!--<label class="site-label">{{data.s}}</label>
         </md-switch>
 
-    </div>
+    </div>-->
     <!--<toggle-switch ng-model="switchStatus " class="switch-switch ">
     </toggle-switch>
     <toggle-switch ng-model="switchStatus " class="switch-danger ">
@@ -20,89 +20,96 @@
     <!--<div ng-hide="switchStatus ">-->
 
 
-    <div class="flip-container" ng-class="{'clicked': flip}">
-        <div class="flipper">
-            <div class="frontholder">
-                <section class="col-md-3 front" style="background: red; ">
-                    <p>col 1</p>
-                </section>
-                <section class="col-md-3 front" style="background: black; ">
-                    <p>col 2</p>
-                </section>
-                <section class="col-md-3 front" style="background: green; ">
-                    <p>col 3</p>
-                </section>
-                <section class="col-md-3 front" style="background: yellow; ">
-                    <p>col 4</p>
-                </section>
+    <!--<div class="flip-container" ng-class="{'clicked': flip}">
+        <div class="flipper">-->
+    <div>
+        <section class="col-md-3">
+            <h3 class="front-title-green-lite">col 1</h3>
+        </section>
+        <section class="col-md-3">
+            <h3 class="front-title-mustard-lite">col 2</h3>
+        </section>
+        <section class="col-md-3">
+            <h3 class="front-title-red-lite">col 3</h3>
+        </section>
+        <section class="col-md-3">
+            <h3 class="front-title-purple-lite">col 4</h3>
+        </section>
 
-            </div>
-        </div>
     </div>
+    <!--</div>
+    </div>-->
 
 
-    <div class="flip-container" ng-class="{'clicked': flip}">
-        <div class="flipper">
-            <div class="backholder">
+    <!--<div class="flip-container" ng-class="{'clicked': flip}">
+        <div class="flipper">-->
+    <!--<div class="backholder">-->
+    <div>
+        <section class="col-md-3 module-list">
+            <h3 class="front-title-green">1610 CCD DEV</h3>
+            <ul class="tt-wrapper">
+                <li ng-repeat="ccdmodule in ccdmodules " ng-model="logged " ng-init="logged=false ">
+                    <input type="checkbox">
+                    <a class="tt-dribbble" ui-sref="logs.component({releaseNumber: '1610', env: 'DEV', component: ccdmodule.name})" data-title="{{ccdmodule.description}} " ng-click="logged=true ">
+                        <i ng-class="{ 'green-sign':ccdmodule.working==='yes' , 'red-sign': ccdmodule.working==='no' , 'orange-sign': ccdmodule.working==='notsure' } "></i> {{ccdmodule.name}}<span></span>
+                    </a>
 
-                <section class="col-md-3 module-list back" style="background: yellowgreen;">
-                    <h3>1610 CCD DEV</h3>
-                    <ul class="tt-wrapper">
-                        <li ng-repeat="ccdmodule in ccdmodules " ng-model="logged " ng-init="logged=false ">
-                            <a class="tt-dribbble" ui-sref=".logs " target="_blank " data-title="{{ccdmodule.description}} " ng-click="logged=true ">
-                                <i ng-class="{ 'green-sign':ccdmodule.working==='yes' , 'red-sign': ccdmodule.working==='no' , 'orange-sign': ccdmodule.working==='notsure' } "></i> {{ccdmodule.name}}<span></span>
-                            </a>
-
-                        </li>
-                    </ul>
-                    <!--<li ng-repeat="ccdmodule in ccdmodules " ng-class="tt ">
+                </li>
+            </ul>
+            <!--<li ng-repeat="ccdmodule in ccdmodules " ng-class="tt ">
                             <a ui-sref=".logs " target="_blank "" data-title="{{ccdmodule.description}}">
                         <i ng-class="{'green-sign':ccdmodule.working === 'yes', 'red-sign': ccdmodule.working === 'no', 'orange-sign': ccdmodule.working === 'notsure'}"></i> {{ccdmodule.name}}
                         </a>
                         </li>-->
 
-                    <!--<div ui-view ng-if="logged"></div>-->
-                    <button class="test-button">Test</button>
-                </section>
-                <section class="col-md-3 module-list back" style="background: blue;">
-                    <h3>1610 CCD IST</h3>
-                    <ul>
-                        <li ng-repeat="ccdmodule in ccdmodules " ng-model="logged " ng-init="logged=false ">
-                            <a ui-sref=".logs " target="_blank " title="{{ccdmodule.description}} " ng-click="logged=true ">
-                                <i ng-class="{ 'green-sign':ccdmodule.working==='yes' , 'red-sign': ccdmodule.working==='no' , 'orange-sign': ccdmodule.working==='notsure' } "></i> {{ccdmodule.name}}
-                            </a>
+            <!--<div ui-view ng-if="logged"></div>-->
+            <button class="test-button">Test</button>
+        </section>
+        <section class="col-md-3 module-list">
+            <h3 class="front-title-mustard">1610 CCD IST</h3>
+            <ul>
+                <li ng-repeat="ccdmodule in ccdmodules " ng-model="logged " ng-init="logged=false ">
+                    <input type="checkbox">
+                    <a ui-sref=".logs " ui-sref="logs.component({releaseNumber: '1610', env: 'ist', component: ccdmodule.name})" title="{{ccdmodule.description}} " ng-click="logged=true ">
+                        <i ng-class="{ 'green-sign':ccdmodule.working==='yes' , 'red-sign': ccdmodule.working==='no' , 'orange-sign': ccdmodule.working==='notsure' } "></i> {{ccdmodule.name}}
+                    </a>
 
-                        </li>
-                    </ul>
-                    <button class="test-button">Test</button>
-                </section>
-                <section class="col-md-3 module-list back" style="background: mediumorchid;">
-                    <h3>1610 CCD E2E</h3>
-                    <ul>
-                        <li ng-repeat="ccdmodule in ccdmodules " ng-model="logged " ng-init="logged=false ">
-                            <a ui-sref=".logs " target="_blank " title="{{ccdmodule.description}} " data-toggle="tooltip " ng-click="logged=true ">
-                                <i ng-class="{ 'green-sign':ccdmodule.working==='yes' , 'red-sign': ccdmodule.working==='no' , 'orange-sign': ccdmodule.working==='notsure' } "></i> {{ccdmodule.name}}
-                            </a>
+                </li>
+            </ul>
+            <button class="test-button">Test</button>
+        </section>
+        <section class="col-md-3 module-list">
+            <h3 class="front-title-red">1610 CCD E2E</h3>
+            <ul>
+                <li ng-repeat="ccdmodule in ccdmodules " ng-model="logged " ng-init="logged=false ">
+                    <input type="checkbox">
+                    <a ui-sref="logs.component({releaseNumber: '1610', env: 'E2E', component: ccdmodule.name})" title="{{ccdmodule.description}} " data-toggle="tooltip " ng-click="logged=true ">
+                        <i ng-class="{ 'green-sign':ccdmodule.working==='yes' , 'red-sign': ccdmodule.working==='no' , 'orange-sign': ccdmodule.working==='notsure' } "></i> {{ccdmodule.name}}
+                    </a>
 
-                        </li>
-                    </ul>
-                    <button class="test-button">Test</button>
-                </section>
-                <section class="col-md-3 module-list back" style="background: tan;">
-                    <h3>1610 CCD Production</h3>
-                    <ul>
-                        <li ng-repeat="ccdmodule in ccdmodules " ng-model="logged " ng-init="logged=false ">
-                            <a ui-sref=".logs " target="_blank " title="{{ccdmodule.description}} " data-toggle="tooltip " ng-click="logged=true ">
-                                <i ng-class="{ 'green-sign':ccdmodule.working==='yes' , 'red-sign': ccdmodule.working==='no' , 'orange-sign': ccdmodule.working==='notsure' } "></i> {{ccdmodule.name}}
-                            </a>
+                </li>
+            </ul>
+            <button class="test-button">Test</button>
+        </section>
+        <section class="col-md-3 module-list">
+            <h3 class="front-title-purple">1610 CCD Production</h3>
+            <ul>
+                <li ng-repeat="ccdmodule in ccdmodules " ng-model="logged " ng-init="logged=false ">
+                    <input type="checkbox">
+                    <a ui-sref="logs.component({releaseNumber: '1610', env: 'Production', component: ccdmodule.name})" title="{{ccdmodule.description}} " data-toggle="tooltip " ng-click="logged=true ">
+                        <i ng-class="{ 'green-sign':ccdmodule.working==='yes' , 'red-sign': ccdmodule.working==='no' , 'orange-sign': ccdmodule.working==='notsure' } "></i> {{ccdmodule.name}}
+                    </a>
 
-                        </li>
-                    </ul>
-                    <button class="test-button">Test</button>
-                </section>
-            </div>
+                </li>
+            </ul>
+            <button class="test-button">Test</button>
+        </section>
+        <div class="align-center ">
+            <button class="btn btn-warning top-space">Check Config</button>
         </div>
     </div>
+    <!--</div>
+    </div>-->
 
 
 

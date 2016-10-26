@@ -1,27 +1,106 @@
 <div>
     <h3 class="home-title">Version Status</h3>
-    <table id="home-menu">
-        <tr>
-            <td>Release</td>
-            <td><span class="status">Status</span></td>
-        </tr>
-        <tr>
-            <td><a ui-sref="logs" target="_blank">1702 DEV</a></td>
-            <td><span class="status">Under Construction</span></td>
-        </tr>
-        <tr>
-            <td><a ui-sref="logs" target="_blank">1610 E2E</a></td>
-            <td><span class="status">On E2E</span></td>
-        </tr>
-        <tr>
-            <td><a ui-sref="logs" target="_blank">1610 IST</a></td>
-            <td><span class="status">On IST</span></td>
-        </tr>
-        <tr>
-            <td><a ui-sref="logs" target="_blank">1607 PVT</a></td>
-            <td><span class="status">Currently Active</span></td>
-        </tr>
-    </table>
+    <div>
+
+        <section class="row padding-lr">
+            <section class="col-md-3 module-list">
+
+                <h3 class="front-title-green">1702 CCD DEV</h3>
+                <ul ng-show="ccdmodules['dev'].length">
+                    <li ng-repeat="ccdmodule in ccdmodules['dev']" ng-model="logged " ng-init="logged=false ">
+                        <input type="checkbox">
+                        <a class="tt-dribbble" ui-sref="logs.component({releaseNumber: '1607', env: 'dev', component: ccdmodule.component})" tittle="{{ccdmodule.description}} " ng-click="logged=true ">
+                            <i ng-class="{ 'green-sign':ccdmodule.status==='OK' , 'red-sign': ccdmodule.status==='Fail' , 'orange-sign': ccdmodule.status==='notsure' } "></i> {{ccdmodule.component}}<span></span>
+                        </a>
+
+                    </li>
+                    <button class="test-button">Test</button>
+                </ul>
+
+                <div ng-show="errorOccured['dev']" class="disabled">This is under construction.</div>
+
+
+            </section>
+
+
+
+            <section class="col-md-3 module-list">
+
+                <h3 class="front-title-mustard">1610 CCD IST</h3>
+                <ul ng-show="ccdmodules['ist'].length">
+                    <li ng-repeat="ccdmodule in ccdmodules['ist']" ng-model="logged " ng-init="logged=false ">
+                        <input type="checkbox">
+                        <a ui-sref="logs.component({releaseNumber: '1610', env: 'ist', component: ccdmodule.component})" tittle="{{ccdmodule.description}} " ng-click="logged=true ">
+                            <i ng-class="{ 'green-sign':ccdmodule.status==='OK' , 'red-sign': ccdmodule.status==='Fail' , 'orange-sign': ccdmodule.status==='notsure' } "></i> {{ccdmodule.component}}<span></span>
+                        </a>
+
+                    </li>
+                    <button class="test-button">Test</button>
+                </ul>
+
+                <div ng-show="errorOccured['ist']" class="disabled">This is under construction.</div>
+
+
+            </section>
+            <section class="col-md-3 module-list ">
+
+                <h3 class="front-title-red">1610 CCD E2E</h3>
+                <ul ng-show="ccdmodules['e2e'].length">
+                    <li ng-repeat="ccdmodule in ccdmodules['e2e']" ng-model="logged " ng-init="logged=false ">
+                        <input type="checkbox">
+                        <a ui-sref="logs.component({releaseNumber: '1610', env: 'e2e', component: ccdmodule.component})" tittle="{{ccdmodule.description}} " ng-click="logged=true ">
+                            <i ng-class="{ 'green-sign':ccdmodule.status==='OK' , 'red-sign': ccdmodule.status==='Fail' , 'orange-sign': ccdmodule.status==='notsure' } "></i> {{ccdmodule.component}}<span></span>
+                        </a>
+
+                    </li>
+                    <button class="test-button">Test</button>
+                </ul>
+
+                <div ng-show="errorOccured['e2e']" class="disabled">This is under construction.</div>
+
+
+            </section>
+            <section class="col-md-3 module-list">
+
+                <h3 class="front-title-purple">1607 CCD PVT</h3>
+                <ul ng-show="ccdmodules['pvt'].length">
+                    <li ng-repeat="ccdmodule in ccdmodules['pvt']" ng-model="logged " ng-init="logged=false ">
+                        <input type="checkbox">
+                        <a class="tt-dribbble" ui-sref="logs.component({releaseNumber: '1607', env: 'dev', component: ccdmodule.component})" tittle="{{ccdmodule.description}} " ng-click="logged=true ">
+                            <i ng-class="{ 'green-sign':ccdmodule.status==='OK' , 'red-sign': ccdmodule.status==='Fail' , 'orange-sign': ccdmodule.status==='notsure' } "></i> {{ccdmodule.component}}<span></span>
+                        </a>
+
+                    </li>
+                    <button class="test-button">Test</button>
+                </ul>
+
+                <div ng-show="errorOccured['pvt']" class="disabled">This is under construction.</div>
+
+
+            </section>
+            <!--<tr>
+                <td><a ui-sref="logs" target="_blank">1702 DEV</a></td>
+                <td><span class="status">Under Construction</span></td>
+            </tr>
+            <tr>
+                <td><a ui-sref="logs" target="_blank">1610 E2E</a></td>
+                <td><span class="status">On E2E</span></td>
+            </tr>
+            <tr>
+                <td><a ui-sref="logs" target="_blank">1610 IST</a></td>
+                <td><span class="status">On IST</span></td>
+            </tr>
+            <tr>
+                <td><a ui-sref="logs" target="_blank">1607 PVT</a></td>
+                <td><span class="status">Currently Active</span></td>
+            </tr>-->
+
+
+        </section>
+        <div class="align-center">
+            <button class="btn btn-warning top-space">Check Config</button>
+        </div>
+    </div>
 
 
 </div>

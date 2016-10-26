@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ngMaterial', 'ui.router', 'toggle-switch', 'ui.grid']);
+var app = angular.module('app', ['ngMaterial', 'ui.router', 'ui.grid', 'ngAnimate', 'ngMaterialDatePicker']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
 
@@ -29,16 +29,28 @@ app.config(function($stateProvider, $urlRouterProvider) {
             controller: 'ccd1702Controller'
         })
         .state('logs', {
+            // url: "/logs/:releaseNumber/:env/:siteOption",
             url: "/logs/:releaseNumber/:env",
             controller: 'logsController',
             templateUrl: "../views/logs.html"
         })
 
     .state('logs.component', {
-        url: "/:component",
-        controller: 'componentsController',
-        templateUrl: "../views/component.html"
-    })
+            url: "/:component",
+            controller: 'componentsController',
+            templateUrl: "../views/component.html"
+        })
+        .state('logs.component.file', {
+            url: "/:eventTime",
+            controller: 'rawController',
+            templateUrl: "../views/raw.html"
+        })
+
+    // .state('raws', {
+    //     url: "/:eventTime/:releaseNumber/:env/:component",
+    //     controller: 'rawController',
+    //     templateUrl: "../views/raw.html"
+    // })
 
     /*
     .state('logs.component',{
@@ -56,12 +68,9 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
 })
 
-app.controller('homeController', ['$scope', '$http', function($scope, $http) {
-    $http.get('logfile_linecount.2016-10-03.json')
-        .then(function(res) {
-            $scope.pageClass = 'page-home';
-        });
-}]);
+// app.controller('homeController', ['$scope', '$http', function($scope, $http) {
+
+// }]);
 
 // app.controller('ccd1607Controller', ['$scope', '$http', function($scope, $http) {
 //     // $http.get('ccd_1607_module.json')

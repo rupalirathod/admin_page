@@ -7,89 +7,128 @@
     </div>-->
     <!--<div class="flip-container" ng-class="{'clicked': flip}">
         <div class="flipper">-->
-    <div>
 
-        <section class="col-md-3">
-            <h3 class="front-title-green-lite">col 1</h3>
-        </section>
-        <section class="col-md-3">
-            <h3 class="front-title-mustard-lite">col 2</h3>
-        </section>
-        <section class="col-md-3">
-            <h3 class="front-title-red-lite">col 3</h3>
-        </section>
-        <section class="col-md-3">
-            <h3 class="front-title-purple-lite">col 4</h3>
-        </section>
-
-    </div>
     <!--</div>
     </div>-->
     <!--<div class="flip-container" ng-class="{'clicked': flip}">
         <div class="flipper">
             <div class="backholder">-->
     <div>
-        <section class="col-md-3 module-list">
-            <h3 class="front-title-green">1607 CCD DEV</h3>
-            <ul class="tt-wrapper">
-                <li ng-repeat="ccdmodule in ccdmodules " ng-model="logged " ng-init="logged=false ">
-                    <input type="checkbox">
-                    <a class="tt-dribbble" ui-sref="logs.component({releaseNumber: '1607', env: 'DEV', component: ccdmodule.name})" data-title="{{ccdmodule.description}} " ng-click="logged=true ">
-                        <i ng-class="{ 'green-sign':ccdmodule.working==='yes' , 'red-sign': ccdmodule.working==='no' , 'orange-sign': ccdmodule.working==='notsure' } "></i> {{ccdmodule.name}}<span></span>
-                    </a>
+        <!--<p class="site-label" ng-model="site2">Site 2</p>-->
+        <section class="row padding-lr">
+            <section class="col-md-3 module-list">
 
-                </li>
-            </ul>
+                <h3 class="front-title-green">1607 CCD DEV Site 1</h3>
+                <ul ng-show="ccdmodules['dev'].length">
+                    <li ng-repeat="ccdmodule in ccdmodules['dev']" ng-model="logged " ng-init="logged=false ">
+                        <input type="checkbox">
+                        <a class="tt-dribbble" ui-sref="logs.component({releaseNumber: '1607', env: 'dev', component: ccdmodule.component})" tittle="{{ccdmodule.description}} " ng-click="logged=true ">
+                            <i ng-class="{ 'green-sign':ccdmodule.status==='OK' , 'red-sign': ccdmodule.status==='Fail' , 'orange-sign': ccdmodule.status==='notsure' } "></i> {{ccdmodule.component}}<span></span>
+                        </a>
 
-            <button class="test-button">Test</button>
+                    </li>
+                    <button class="test-button">Test</button>
+                </ul>
+
+                <div ng-show="errorOccured['dev']" class="disabled">This is under construction.</div>
+
+
+            </section>
+            <section class="col-md-3 module-list">
+                <h3 class="front-title-mustard">1607 CCD IST Site 1</h3>
+                <ul ng-show="ccdmodules['ist'].length">
+                    <li ng-repeat="ccdmodule in ccdmodules['ist']" ng-model="logged " ng-init="logged=false ">
+                        <input type="checkbox">
+
+                        <a ui-sref="logs.component({releaseNumber: '1607', env: 'ist', component: ccdmodule.component})" tittle="{{ccdmodule.description}} " ng-click="logged=true ">
+                            <i ng-class="{ 'green-sign':ccdmodule.status==='OK' , 'red-sign': ccdmodule.status==='Fail' , 'orange-sign': ccdmodule.status==='notsure' } "></i> {{ccdmodule.component}}
+                        </a>
+
+                    </li>
+                    <button class="test-button">Test</button>
+                </ul>
+                <div ng-show="errorOccured['ist']" class="disabled">This is under construction.</div>
+
+
+            </section>
+            <section class="col-md-3 module-list ">
+                <h3 class="front-title-red">1607 CCD E2E Site 1</h3>
+                <ul ng-show="ccdmodules['e2e'].length">
+                    <li ng-repeat="ccdmodule in ccdmodules['e2e'] " ng-model="logged " ng-init="logged=false ">
+                        <input type="checkbox">
+
+                        <a ui-sref="logs.component({releaseNumber: '1607', env: 'e2e', component: ccdmodule.component})" tittle="{{ccdmodule.description}} " ng-click="logged=true ">
+                            <i ng-class="{ 'green-sign':ccdmodule.status==='OK' , 'red-sign': ccdmodule.status==='Fail' , 'orange-sign': ccdmodule.status==='notsure' } "></i> {{ccdmodule.component}}
+                        </a>
+
+                    </li>
+                    <button class="test-button">Test</button>
+                </ul>
+                <div ng-show="errorOccured['e2e']" class="disabled">This is under construction.</div>
+
+            </section>
+            <section class="col-md-3 module-list">
+                <h3 class="front-title-purple">1607 CCD Production Site 1</h3>
+                <ul ng-show="ccdmodules['pvt'].length">
+                    <li ng-repeat="ccdmodule in ccdmodules['pvt'] " ng-model="logged " ng-init="logged=false ">
+                        <input type="checkbox">
+
+                        <a ui-sref="logs.component({releaseNumber: '1607', env: 'pvt', component: ccdmodule.component})" tittle="{{ccdmodule.description}} " ng-click="logged=true ">
+                            <i ng-class="{ 'green-sign':ccdmodule.status==='OK' , 'red-sign': ccdmodule.status==='Fail' , 'orange-sign': ccdmodule.status==='notsure' } "></i> {{ccdmodule.component}}
+                        </a>
+
+                    </li>
+                    <button class="test-button">Test</button>
+                </ul>
+                <div ng-show="errorOccured['pvt']" class="disabled">This is under construction.</div>
+
+            </section>
         </section>
-        <section class="col-md-3 module-list">
-            <h3 class="front-title-mustard">1607 CCD IST</h3>
-            <ul>
-                <li ng-repeat="ccdmodule in ccdmodules " ng-model="logged " ng-init="logged=false ">
-                    <input type="checkbox">
 
-                    <a ui-sref="logs.component({releaseNumber: '1607', env: 'IST', component: ccdmodule.name})" title="{{ccdmodule.description}} " ng-click="logged=true ">
-                        <i ng-class="{ 'green-sign':ccdmodule.working==='yes' , 'red-sign': ccdmodule.working==='no' , 'orange-sign': ccdmodule.working==='notsure' } "></i> {{ccdmodule.name}}
-                    </a>
-
-                </li>
-            </ul>
-            <button class="test-button">Test</button>
-        </section>
-        <section class="col-md-3 module-list">
-            <h3 class="front-title-red">1607 CCD E2E</h3>
-            <ul>
-                <li ng-repeat="ccdmodule in ccdmodules " ng-model="logged " ng-init="logged=false ">
-                    <input type="checkbox">
-
-                    <a ui-sref="logs.component({releaseNumber: '1607', env: 'E2E', component: ccdmodule.name})" title="{{ccdmodule.description}} " data-toggle="tooltip " ng-click="logged=true ">
-                        <i ng-class="{ 'green-sign':ccdmodule.working==='yes' , 'red-sign': ccdmodule.working==='no' , 'orange-sign': ccdmodule.working==='notsure' } "></i> {{ccdmodule.name}}
-                    </a>
-
-                </li>
-            </ul>
-            <button class="test-button">Test</button>
-        </section>
-        <section class="col-md-3 module-list">
-            <h3 class="front-title-purple">1607 CCD Production</h3>
-            <ul>
-                <li ng-repeat="ccdmodule in ccdmodules " ng-model="logged " ng-init="logged=false ">
-                    <input type="checkbox">
-
-                    <a ui-sref="logs.component({releaseNumber: '1607', env: 'Production', component: ccdmodule.name})" title="{{ccdmodule.description}} " data-toggle="tooltip " ng-click="logged=true ">
-                        <i ng-class="{ 'green-sign':ccdmodule.working==='yes' , 'red-sign': ccdmodule.working==='no' , 'orange-sign': ccdmodule.working==='notsure' } "></i> {{ccdmodule.name}}
-                    </a>
-
-                </li>
-            </ul>
-            <button class="test-button">Test</button>
-        </section>
-        <div class="align-center">
-            <button class="btn btn-warning top-space">Check Config</button>
-        </div>
 
         <!--</div>
         </div>-->
+    </div>
+    <div>
+
+        <section class="row padding-lr">
+            <!--<p class="site-label" ng-model="site1">Site 1</p>-->
+            <section class="col-md-3 module-list">
+
+                <h3 class="front-title-green-lite">1607 CCD DEV Site 2</h3>
+                <!--<ul class="tt-wrapper" ng-show="ccdmodules['dev'].length">
+                    <li ng-repeat="ccdmodule in ccdmodules['dev']" ng-model="logged " ng-init="logged=false ">
+                        <input type="checkbox">
+                        <!--<a class="tt-dribbble" ui-sref="logs.component({releaseNumber: '1607', env: 'dev', siteOption: 'site1',  component: ccdmodule.component})" tittle="{{ccdmodule.description}} " ng-click="logged=true ">-->
+
+                <!--<a class="tt-dribbble" ui-sref="logs.component({releaseNumber: '1607', env: 'dev',  component: ccdmodule.component})" tittle="{{ccdmodule.description}} " ng-click="logged=true ">
+                    <i ng-class="{ 'green-sign':ccdmodule.status==='OK' , 'red-sign': ccdmodule.status==='Fail' , 'orange-sign': ccdmodule.status==='notsure' } "></i> {{ccdmodule.component}}<span></span>
+                </a>
+
+                </li>
+                </ul>-->
+                <div ng-show="errorOccured['pvt']" class="disabled">This is under construction.</div>
+
+            </section>
+            <section class="col-md-3 module-list">
+                <h3 class="front-title-mustard-lite">1607 CCD IST Site 2</h3>
+                <div ng-show="errorOccured['pvt']" class="disabled">This is under construction.</div>
+
+            </section>
+            <section class="col-md-3 module-list">
+                <h3 class="front-title-red-lite">1607 CCD E2E Site 2</h3>
+                <div ng-show="errorOccured['pvt']" class="disabled">This is under construction.</div>
+
+            </section>
+            <section class="col-md-3 module-list">
+                <h3 class="front-title-purple-lite">1607 CCD Production Site 2</h3>
+                <div ng-show="errorOccured['pvt']" class="disabled">This is under construction.</div>
+
+            </section>
+
+        </section>
+    </div>
+    <div class="align-center">
+        <button class="btn btn-warning top-space">Check Config</button>
     </div>
 </div>

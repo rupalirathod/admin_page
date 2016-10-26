@@ -1,0 +1,11 @@
+[
+    { "componentcomponent": "CCD-Web-Server" },
+    { "componentcomponent": "WorkFlow Engine" },
+    { "componentcomponent": "A&AI Mediator" },
+    { "componentcomponent": "Blueprint generator" },
+    { "componentcomponent": "MSO-Deployer" },
+    { "componentcomponent": "uPCE Orchestrator" },
+    { "componentcomponent": "Catalog" },
+    { "componentcomponent": "Validator" },
+    { "componentcomponent": "Task-Dispatcher" }
+]

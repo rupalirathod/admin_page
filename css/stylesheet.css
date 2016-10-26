@@ -2,12 +2,20 @@ body {
     height: auto;
 }
 
+ui-helper-hidden-accessible {
+    position: absolute !important;
+}
+
 .red {
     background: red;
 }
 
 .align-center {
     padding: 0 48%;
+}
+
+.row .padding-lr {
+    margin-top: 15px;
 }
 
 header,
@@ -42,24 +50,8 @@ header {
     color: #CD752E;
 }
 
-#home-menu {
-    color: #00907c !important;
-    margin: 0 auto;
-    font-size: 15px;
-}
-
-#home-menu,
 .home-title {
-    text-align: center;
     padding: 15px 10px;
-}
-
-#home-menu tr td a {
-    cursor: pointer;
-}
-
-#home-menu tr td {
-    padding: 10px;
 }
 
 .status {
@@ -79,7 +71,7 @@ header {
 
 .main-content-holder {
     background: #999999;
-    height: 490px;
+    height: 725px;
 }
 
 .page {
@@ -392,6 +384,13 @@ header {
     list-style: none;
 }
 
+.disabled {
+    background: #dddddd;
+    color: #0c0c0c !important;
+    padding: 10px;
+    height: 250px;
+}
+
 .logs-grid {
     color: #00907c !important;
     padding: 0 15px;
@@ -401,8 +400,8 @@ header {
     list-style: none;
     margin-top: 5px;
     margin-bottom: 5px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    /*padding-top: 5px;
+    padding-bottom: 5px;*/
     background: rgba(245, 244, 244, 0.86);
     border-radius: 5px;
     border: 5px solid rgba(255, 255, 255, .2);
@@ -468,7 +467,10 @@ header {
 }
 
 .site-label {
-    padding: 45px;
+    margin-top: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 0;
 }
 
 
@@ -546,6 +548,8 @@ header {
 .front-title-purple-lite {
     color: #ffffff;
     padding: 5px 0 5px 5px;
+    margin-top: 5px;
+    font-size: 18px;
 }
 
 .front-title-green {
@@ -603,4 +607,9 @@ header {
 
 .top-space {
     margin-top: 25px;
+}
+
+.padding-lr {
+    padding-left: 15px;
+    padding-right: 15px;
 }

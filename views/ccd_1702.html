@@ -33,13 +33,13 @@
         <div class="flipper">
             <div class="backholder">-->
     <div>
-        <section class="col-md-3 module-list">
+        <section class="col-md-3 module-list {{disabled}}">
             <h3 class="front-title-green">1702 CCD DEV</h3>
             <ul class="tt-wrapper">
                 <li ng-repeat="ccdmodule in ccdmodules " ng-model="logged " ng-init="logged=false ">
                     <input type="checkbox">
-                    <a class="tt-dribbble" ui-sref="logs.component({releaseNumber: '1702', env: 'DEV', component: ccdmodule.name})" data-title="{{ccdmodule.description}} " ng-click="logged=true ">
-                        <i ng-class="{ 'green-sign':ccdmodule.working==='yes' , 'red-sign': ccdmodule.working==='no' , 'orange-sign': ccdmodule.working==='notsure' } "></i> {{ccdmodule.name}}<span></span>
+                    <a class="tt-dribbble" ui-sref="logs.component({releaseNumber: '1702', env: 'dev', component: ccdmodule.component})" tittle="{{ccdmodule.description}} " ng-click="logged=true ">
+                        <i ng-class="{ 'green-sign':ccdmodule.working==='yes' , 'red-sign': ccdmodule.working==='no' , 'orange-sign': ccdmodule.working==='notsure' } "></i> {{ccdmodule.component}}<span></span>
                     </a>
 
                 </li>
@@ -47,39 +47,39 @@
 
             <button class="test-button">Test</button>
         </section>
-        <section class="col-md-3 module-list">
+        <section class="col-md-3 module-list {{disabled}}">
             <h3 class="front-title-mustard">1702 CCD IST</h3>
             <ul>
                 <li ng-repeat="ccdmodule in ccdmodules " ng-model="logged " ng-init="logged=false ">
                     <input type="checkbox">
-                    <a ui-sref="logs.component({releaseNumber: '1702', env: 'IST', component: ccdmodule.name})" title="{{ccdmodule.description}} " ng-click="logged=true ">
-                        <i ng-class="{ 'green-sign':ccdmodule.working==='yes' , 'red-sign': ccdmodule.working==='no' , 'orange-sign': ccdmodule.working==='notsure' } "></i> {{ccdmodule.name}}
+                    <a ui-sref="logs.component({releaseNumber: '1702', env: 'ist', component: ccdmodule.component})" title="{{ccdmodule.description}} " ng-click="logged=true ">
+                        <i ng-class="{ 'green-sign':ccdmodule.working==='yes' , 'red-sign': ccdmodule.working==='no' , 'orange-sign': ccdmodule.working==='notsure' } "></i> {{ccdmodule.component}}
                     </a>
 
                 </li>
             </ul>
             <button class="test-button">Test</button>
         </section>
-        <section class="col-md-3 module-list">
+        <section class="col-md-3 module-list {{disabled}}">
             <h3 class="front-title-red">1702 CCD E2E</h3>
             <ul>
                 <li ng-repeat="ccdmodule in ccdmodules " ng-model="logged " ng-init="logged=false ">
                     <input type="checkbox">
-                    <a ui-sref="logs.component({releaseNumber: '1702', env: 'E2E', component: ccdmodule.name})" title="{{ccdmodule.description}} " data-toggle="tooltip " ng-click="logged=true ">
-                        <i ng-class="{ 'green-sign':ccdmodule.working==='yes' , 'red-sign': ccdmodule.working==='no' , 'orange-sign': ccdmodule.working==='notsure' } "></i> {{ccdmodule.name}}
+                    <a ui-sref="logs.component({releaseNumber: '1702', env: 'e2e', component: ccdmodule.component})" title="{{ccdmodule.description}} " data-toggle="tooltip " ng-click="logged=true ">
+                        <i ng-class="{ 'green-sign':ccdmodule.working==='yes' , 'red-sign': ccdmodule.working==='no' , 'orange-sign': ccdmodule.working==='notsure' } "></i> {{ccdmodule.component}}
                     </a>
 
                 </li>
             </ul>
             <button class="test-button">Test</button>
         </section>
-        <section class="col-md-3 module-list">
+        <section class="col-md-3 module-list {{disabled}}">
             <h3 class="front-title-purple">1702 CCD Production</h3>
             <ul>
                 <li ng-repeat="ccdmodule in ccdmodules " ng-model="logged " ng-init="logged=false ">
                     <input type="checkbox">
-                    <a ui-sref="logs.component({releaseNumber: '1702', env: 'Production', component: ccdmodule.name})" title="{{ccdmodule.description}} " data-toggle="tooltip " ng-click="logged=true ">
-                        <i ng-class="{ 'green-sign':ccdmodule.working==='yes' , 'red-sign': ccdmodule.working==='no' , 'orange-sign': ccdmodule.working==='notsure' } "></i> {{ccdmodule.name}}
+                    <a ui-sref="logs.component({releaseNumber: '1702', env: 'Production', component: ccdmodule.component})" title="{{ccdmodule.description}} " data-toggle="tooltip " ng-click="logged=true ">
+                        <i ng-class="{ 'green-sign':ccdmodule.working==='yes' , 'red-sign': ccdmodule.working==='no' , 'orange-sign': ccdmodule.working==='notsure' } "></i> {{ccdmodule.component}}
                     </a>
 
                 </li>

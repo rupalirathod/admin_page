@@ -1,4 +1,4 @@
-.tt-wrapper li .tt-dribbble {
+/*.tt-wrapper li .tt-dribbble {
     background-position: -136px 0px;
 }
 
@@ -6,9 +6,7 @@
     position: relative;
 }
 
-.tt-wrapper li a:after {
-    content: "heelo";
-}
+.tt-wrapper li a:after {}
 
 .tt-wrapper li a span {
     color: red;
@@ -77,4 +75,4 @@
     -o-transform: translate(0px) rotate(0deg) scale(1);
     -ms-transform: translate(0px) rotate(0deg) scale(1);
     transform: translate(0px) rotate(0deg) scale(1);
-}
+}*/

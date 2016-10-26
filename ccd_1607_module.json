@@ -1,5 +1,5 @@
 {
-    "modulesccd1607": [{
+    "components": [{
             "name": "CCD-Web-Server",
             "type": "module",
             "working": "yes",

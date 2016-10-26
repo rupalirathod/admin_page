@@ -5,14 +5,20 @@
         <div class="row">
             <div class="col-md-3">
                 <ul class="logs-grid">
-                    <li ng-repeat="component in components">
-                        <a ui-sref="logs.component({releaseNumber: releaseNumber, env: env, component: component.componentName})" ui-sref-active="active-component">{{component.componentName}}</a>
+
+                    <!--<pre>{{components}}</pre>-->
+                    <li ng-repeat="component in components.components" style="color: red;">
+                        <a ui-sref="logs.component({releaseNumber: releaseNumber, env: env, component: component.component})" ui-sref-active="active-component">{{component.component}}</a>
                     </li>
                 </ul>
+
             </div>
             <div class="col-md-9">
+
                 <div ui-view></div>
             </div>
+
+
         </div>
     </div>
 </div>

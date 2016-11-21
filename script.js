@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ngMaterial', 'ui.router', 'ui.grid', 'ngAnimate', 'ngMaterialDatePicker']);
+var app = angular.module('app', ['ngMaterial', 'ui.router', 'toggle-switch', 'ui.grid']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
 
@@ -7,11 +7,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
         .state('/', {
             url: "/",
             templateUrl: "/index.html"
-        })
-        .state('/login', {
-            url: "/login",
-            templateUrl: "../views/login.html",
-            controller: 'loginController'
         })
         .state('home', {
             url: "/home",
@@ -45,17 +40,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
             controller: 'componentsController',
             templateUrl: "../views/component.html"
         })
-        .state('logs.component.file', {
-            url: "/:eventTime",
+        .state('raws', {
+            url: "/:eventTime/:releaseNumber/:env/:component",
             controller: 'rawController',
             templateUrl: "../views/raw.html"
         })
-
-    // .state('raws', {
-    //     url: "/:eventTime/:releaseNumber/:env/:component",
-    //     controller: 'rawController',
-    //     templateUrl: "../views/raw.html"
-    // })
 
     /*
     .state('logs.component',{

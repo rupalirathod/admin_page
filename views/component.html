@@ -6,18 +6,18 @@
 
     <div class="row">
         <section class="col-md-4">
-            <div>Log file: {{logFileName}} <a href="{{logFileLink}}" target="blank" class="btn btn-default">Download file</a>
-                <button class="btn btn-warning "><a href="http://mtanjv9ccda01.aic.cip.att.com:8445/generateRawLogs/January%202,%202010/1610/IST/blueprint" target="_blank">RAW</a></button>
-                <!--<button style="background: red;" ng-click="collapseDirective = !collapseDirective">time</button>
+            <!--<div>Log file: {{logFileName}} <a href="{{logFileLink}}" target="blank" class="btn btn-default">Download file</a>-->
+            <!--<button class="btn btn-warning "><a href="http://mtanjv9ccda01.aic.cip.att.com:8445/generateRawLogs/January%202,%202010/1610/IST/blueprint" target="_blank">RAW</a></button>-->
+            <!--<button style="background: red;" ng-click="collapseDirective = !collapseDirective">time</button>
         <div rg-range-picker="myDatetimeRange" collapse="collapseDirective" labels="myDatetimeLabels"></div>-->
-                <!--<button ng-click="collapseDirective = !collapseDirective">time</button>
+            <!--<button ng-click="collapseDirective = !collapseDirective">time</button>
         <div rg-range-picker="myDatetimeRange" collapse="collapseDirective" labels="myDatetimeLabels"></div>-->
-                <!--<div class='input-group date' id='startDate'>
+            <!--<div class='input-group date' id='startDate'>
             <input type='text' class="form-control" name="startDate" />
             <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
             </span>
         </div>-->
-            </div>
+            <!--</div>-->
         </section>
         <section class="col-md-4">
             <!--<div class='input-group date' id='datetimepicker1' ng-click="date()">
@@ -34,12 +34,13 @@
             </div>
         </section>
         <section class="col-md-1">
-            <button class="btn btn-info">Get logs</button>
+            <a class="btn btn-info" ng-show="dateTimeStart" href="http://mtanjv9ccda01.aic.cip.att.com:8445/generateRawLogs/{{dateTimeStart| date:'yyyy-MM-dd HH:mm:ss'}}/{{releaseNumber}}/{{env}}/{{component}}" target="_blank">Get logs</a>
+
         </section>
     </div>
 </div>
-<!--<script type="text/javascript">
+<!--<script type=" text/javascript ">
     $(document).ready(function() {
-        $("#datetimepicker1").datetimepicker();
+        $("#datetimepicker1 ").datetimepicker();
     });
 </script>-->

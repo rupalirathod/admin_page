@@ -1,54 +1,54 @@
 {
-    "components": [{
-            "name": "CCD-Web-Server",
+    "modulesccd1607": [{
+            "component": "CCD-Web-Server",
             "type": "module",
             "working": "yes",
             "timeStamp": "2016-09-28T00:00:00.000Z"
         },
         {
-            "name": "WorkFlow Engine",
+            "component": "WorkFlow Engine",
             "type": "module",
             "working": "yes",
             "timeStamp": "2016-09-28T00:00:00.000Z"
         },
         {
-            "name": "A&AI Mediator",
+            "component": "A&AI Mediator",
             "type": "module",
             "working": "no",
             "timeStamp": "2016-09-28T00:00:00.000Z"
         },
         {
-            "name": "Blueprint generator",
+            "component": "Blueprint generator",
             "type": "module",
             "working": "notsure",
             "timeStamp": "2016-09-28T00:00:00.000Z"
         },
         {
-            "name": "MSO-Deployer",
+            "component": "MSO-Deployer",
             "type": "module",
             "working": "notsure",
             "timeStamp": "2016-09-28T00:00:00.000Z"
         },
         {
-            "name": "uPCE Orchestrator",
+            "component": "uPCE Orchestrator",
             "type": "module",
             "working": "yes",
             "timeStamp": "2016-09-28T00:00:00.000Z"
         },
         {
-            "name": "Catalog",
+            "component": "Catalog",
             "type": "module",
             "working": "no",
             "timeStamp": "2016-09-28T00:00:00.000Z"
         },
         {
-            "name": "Validator",
+            "component": "Validator",
             "type": "module",
             "working": "yes",
             "timeStamp": "2016-09-28T00:00:00.000Z"
         },
         {
-            "name": "Task-Dispatcher",
+            "component": "Task-Dispatcher",
             "type": "module",
             "working": "no",
             "timeStamp": "2016-09-28T00:00:00.000Z"

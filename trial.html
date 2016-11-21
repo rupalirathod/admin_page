@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>AT&amp;T Common Configuration Dashboard</title>
+
+    <!-- THIS IS THE AT&T ASC CODE -->
+    <link rel='shortcut icon' href='//0.ecom.attccc.com/styles/att/assets3.2.0/images/att-globe.png' />
+    <!--link rel="stylesheet" type="text/css" href="/stylesheets/site_global.css?190282319"/>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/master_marketplace.css?4226232507"/>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/entry-form.css?4198630157" id="pagesheet"/-->
+    <!-- END OF AT&T ASC CODE -->
+
+
+    <script src="/js/d3.v3.min.js"></script>
+    <script src="/js/jquery-2.1.3.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins)
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+ -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/js/bootstrap.3.3.7.min.js"></script>
+
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/stylesheets/bootstrap.3.3.7.min.css">
+
+
+    <link rel='stylesheet' href='/stylesheets/respLandingPage.css' />
+    <link rel='stylesheet' href='/stylesheets/respCommon.css' />
+    <link rel='stylesheet' href='/stylesheets/att_colors.css' />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/shoppingcart.css' media="screen" type="text/css" />
+    <link rel="stylesheet" href="/stylesheets/composition.css">
+
+    <script>
+        var GLOBAL = {
+            "system": 'ccd',
+            "run_mode": null
+        };
+
+        GLOBAL.whichpage = 'project_workflow';
+
+        GLOBAL.run_mode = {
+            "dev": true
+        } || {};
+
+        GLOBAL.project = GLOBAL.project_id = 'acd62c26-7a83-430b-9989-eaa8ff287fa2';
+
+        GLOBAL.composition_id = 'cb17f4bb-7b0d-4015-a862-d6ef6bdfa523';
+
+        GLOBAL.userkey = 'rr848n';
+
+        GLOBAL.sessionid = '4n08vbx5dgjVQFvKAjoOGKjde-gW9NVI';
+
+        GLOBAL.oilcatalog = 'http://marketing.web.att.com/oil/download?oilID=';
+
+        GLOBAL.userFullName = 'RUPALI RATHOD';
+
+        GLOBAL.usermcn = '';
+
+        GLOBAL.dbShoppingCart = {
+            "locations": [],
+            "products": [{
+                "itemId": 21510,
+                "name": "vHNF VC 10M",
+                "id": 21510,
+                "labels": ["CatalogItem"],
+                "annotations": [{
+                    "modelName": "dhv_vnf_vc_10M",
+                    "modelNameVersionId": "14e5d258-af4f-4f99-a762-1b56fb41a485",
+                    "modelId": "14e5d258-af4f-4f99-a762-1b56fb41a485",
+                    "modelVersion": "0.1",
+                    "att-part-number": "DHV-VNF-VC-10M",
+                    "modelType": "vnf",
+                    "management-option": "ATT"
+                }],
+                "template": {
+                    "name": "dhv_vnf_vc_10M",
+                    "description": "Hybrid Network Service vHNF",
+                    "node": {
+                        "name": "vHNF",
+                        "type": {
+                            "name": "com.att.d2.resource.vHNF",
+                            "id": "com.att.d2.resource.vHNF"
+                        },
+                        "properties": [{
+                            "name": "att-part-number",
+                            "value": "DHV-VNF-VC-10M"
+                        }, {
+                            "name": "vendor-name",
+                            "value": "VC"
+                        }, {
+                            "name": "management-option",
+                            "value": "ATT"
+                        }]
+                    }
+                },
+                "catalog": "http://mtanjv9ccdb03.aic.cip.att.com:7474#CCD",
+                "neoId": 9209,
+                "singleton": true,
+                "cart_type": "vnf",
+                "uuid": "e8d2ca67-7fb9-4f15-9e04-5636bde47c95"
+            }, {
+                "itemId": 21102,
+                "name": "UCPE 401",
+                "id": 21102,
+                "labels": ["CatalogItem"],
+                "annotations": [{
+                    "att-part-number": "ATT-U401"
+                }],
+                "template": {
+                    "name": "ucpe_401",
+                    "description": "Design template for ucpe model 401",
+                    "node": {
+                        "name": "ucpe",
+                        "type": {
+                            "name": "com.att.d2.resource.uCPE",
+                            "id": "com.att.d2.resource.uCPE"
+                        },
+                        "properties": [{
+                            "name": "att-part-number",
+                            "value": "ATT-U401"
+                        }, {
+                            "name": "vendor-name",
+                            "value": "Juniper"
+                        }]
+                    }
+                },
+                "catalog": "http://mtanjv9ccdb03.aic.cip.att.com:7474#CCD",
+                "neoId": 7273,
+                "singleton": true,
+                "uuid": "d0336b01-9eb3-4d06-8e9f-56dfeab63bd8",
+                "cart_type": "ucpe"
+            }, {
+                "itemId": 31003,
+                "name": "UCPE WAN Network Interface",
+                "id": 31003,
+                "label": "CatalogItem",
+                "models": [{
+                    "name": "ucpe_wan_networkinterface",
+                    "description": "Design template for ucpe WAN network interface",
+                    "version": "0.1"
+                }],
+                "annotations": [{
+                    "properties": {},
+                    "label": "Resource",
+                    "id": 9131
+                }, {
+                    "properties": {
+                        "name": "WAN Network INterface Recommendations"
+                    },
+                    "label": "Annotation",
+                    "id": 7358
+                }],
+                "catalog": "http://mtanjv9ccdb03.aic.cip.att.com:7474#CCD",
+                "neoId": 7354,
+                "uuid": "78c7dbb4-4297-484c-983d-f9acda068e5d",
+                "node_id": "n.1478895855181.2"
+            }, {
+                "itemId": 31002,
+                "name": "UCPE LAN Network Interface",
+                "id": 31002,
+                "label": "CatalogItem",
+                "models": [{
+                    "name": "ucpe_lan_networkinterface",
+                    "description": "Design template for ucpe LAN network interface",
+                    "version": "0.1"
+                }],
+                "annotations": [{
+                    "properties": {},
+                    "label": "Resource",
+                    "id": 9130
+                }, {
+                    "properties": {
+                        "name": "LAN Network Interface Recommendations"
+                    },
+                    "label": "Annotation",
+                    "id": 7357
+                }],
+                "catalog": "http://mtanjv9ccdb03.aic.cip.att.com:7474#CCD",
+                "neoId": 7353,
+                "uuid": "f2a95b6c-895b-4c34-9048-e315fc19d0fc",
+                "node_id": "n.1478895877558.3"
+            }, {
+                "itemId": 31001,
+                "name": "UCPE VLAN",
+                "id": 31001,
+                "label": "CatalogItem",
+                "models": [{
+                    "name": "ucpe_vlan",
+                    "description": "Design template for ucpe VLANs",
+                    "version": "0.1"
+                }],
+                "annotations": [{
+                    "properties": {},
+                    "label": "Resource",
+                    "id": 9129
+                }, {
+                    "properties": {
+                        "name": "VLAN Recommendations"
+                    },
+                    "label": "Annotation",
+                    "id": 7356
+                }],
+                "catalog": "http://mtanjv9ccdb03.aic.cip.att.com:7474#CCD",
+                "neoId": 7352,
+                "uuid": "d3ad5574-94b7-4c17-ba40-cac776370639",
+                "node_id": "n.1478895879090.4"
+            }, {
+                "itemId": 31001,
+                "name": "UCPE VLAN",
+                "id": 31001,
+                "label": "CatalogItem",
+                "models": [{
+                    "name": "ucpe_vlan",
+                    "description": "Design template for ucpe VLANs",
+                    "version": "0.1"
+                }],
+                "annotations": [{
+                    "properties": {},
+                    "label": "Resource",
+                    "id": 9129
+                }, {
+                    "properties": {
+                        "name": "VLAN Recommendations"
+                    },
+                    "label": "Annotation",
+                    "id": 7356
+                }],
+                "catalog": "http://mtanjv9ccdb03.aic.cip.att.com:7474#CCD",
+                "neoId": 7352,
+                "uuid": "ffeeba5a-a257-4448-bb82-0242a5c58857",
+                "node_id": "n.1479502746585.3"
+            }],
+            "customer": {
+                "global_customer_id": "UCPE-160-IST-CUSTOMER",
+                "customer_id": "UCPE-160-IST-CUSTOMER",
+                "customer_name": "UCPE-160-IST-CUSTOMER"
+            },
+            "whichpage": "project_workflow"
+        } || {};
+
+        GLOBAL.projectState = 'COMPOSE';
+
+        GLOBAL.projectStatus = 'working';
+    </script>
+
+    <script src="/js/utils.js"></script>
+    <script src="/js/workflow.js"></script>
+    <script src="/js/users.js"></script>
+    <script src="/js/inlineedit.js"></script>
+    <script src="/js/shoppingcart.js"></script>
+    <script src="/js/projectstate.js"></script>
+
+
+    <style>
+        .list-inline>li {
+            display: inline-block;
+            padding-right: 40px;
+            padding-left: 40px
+        }
+        
+        .navbar-inverse .navbar-nav>li>a {
+            color: white;
+        }
+        
+        .navbar-inverse .navbar-nav>li>a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        .news_number {
+            text-align: right;
+            padding: 5px 10px 5px 20px;
+        }
+        
+        .news_text {
+            text-align: left;
+            padding: 5px 20px 5px 10px;
+        }
+    </style>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+</head>
+
+<body id="page">
+
+    <nav id="asc_header" class="navbar navbar-inverse navbar-fixed-top" style="display:none;">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+                <!--<a class="navbar-brand" href="#">ASC</a>-->
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+
+                    <li><a class="portal-title" href="https://www.e-access.att.com/ecomp_portal_dev_n1/ecompui/login.htm" style="padding-bottom: 10px;">ECOMP RR</a></li>
+
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">welcome, RUPALI RATHOD 
+
+            	<img src="https://tspace.web.att.com/profiles/photo.do?uid=rr848n" style="width: 20px;border-radius:50%;">
+
+            </a></li>
+                    <li><a href="/logout" class="asc_nav_link">Logout</a></li>
+                </ul>
+
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </nav>
+
+    <div id="asc_subheader" class="container" style="display:none;">
+        <div style="width:0%;float:left;">
+            <img src="/images/att-logo.png" style="padding-right: 5px;" />
+        </div>
+
+        <ul class="list-inline" style="display: inline; float: right;">
+
+            <li><a href="/" class="att_blue_color">Home</a></li>
+            <li><a href="/projects_migrate" class="att_blue_color">migrate imported projects to 1610</a></li>
+            <li><a href="/ccd/mock_sdnom2ccd" class="att_blue_color">mock SDNOM-to-CCD</a></li>
+
+        </ul>
+
+        <div style="margin-left: 5%;">
+            <h3 style="font: normal 22px/1.625em OmnesATT-2, Helvetica, Arial, sans-serif !important; font-weight: bold; color: black; display:inline;">AT&amp;T Common Configuration Dashboard</h3><br/>
+
+            <h4 style="font: normal 12px/1.625em OmnesATT-2, Helvetica, Arial, sans-serif !important; font-weight: bold; color: black; display:inline;">labs version: api demonstration</h4>
+
+        </div>
+    </div>
+
+    <div class="row" style="width: 1474px; margin-left: auto; margin-right: auto;">
+        <!-- 1574px -->
+        <!-- 1274px -->
+        <!-- 1174px for index, 1450px is big enough for the workspace page -->
+
+
+        <div class="col-md-12" style=" min-height: 350px; padding: 0px;">
+
+
+            <div class="row">
+                <div class="col-md-8" style="padding-right: 0px;">
+                    <div id="compositionTab" class="project_box" style="margin: 5px; padding: 5px; min-height: 700px;" data-spy="affix" data-offset-top="200">
+                        <!--
+        <span>Views:</span> 
+        <select>
+          <option>List</option>
+          <option>Icon</option>
+        </select>
+        <span>Layers:</span>
+        <select>
+          <option>Network</option>
+          <option>MIS</option>
+          <option>Voice</option>
+          <option>Cloud</option>
+          <option>Data</option>
+          <option>Analytics</option>
+        </select>
+        <hr/>
+        <img src="/images/composition.png" />
+     -->
+                        <div id="composeTabBox" style="position:relative;">
+                            <a id="compositionMax" onclick="maximize('composeTabBox');" style="float: right; margin-left: 10px;cursor: pointer; display:inline;"><span id="maximize"></span></a>
+                            <div id="compositionBox">
+                                <a id="restoresize" onclick="restoresize('composeTabBox');" style="float: right; margin-left: 10px;cursor: pointer; display:none;"></a>
+
+                                <span style="width:60%;float:right;position:relative;">
+			<a id="commitcomposition" class="btn btn-primary" role="button" style="margin-left:15px;float:right;" >Submit Project for Validation</a>
+
+			<a id="clearcomposition" class="btn btn-default" role="button" style="float:left;">Clear Composition</a>
+
+		</span>
+
+
+                                <ul class="nav nav-tabs">
+                                    <li id="TabUCPE" class="composeTab"><a onclick="showComposeTab(this.parentNode.id);" style="padding: 10px;">uCPE</a></li>
+                                </ul>
+
+                            </div>
+                            <div>
+                                <script type="text/javascript" src="/js/underscore-min.js"></script>
+                                <script type="text/javascript" src="/js/react.min.js"></script>
+                                <script type="text/javascript" src="/js/circular-json.js"></script>
+                                <script type="text/javascript" src="/js/nodepropertyeditor.js"></script>
+
+                                <div id="compositiondiv" style="position:relative;">
+                                    <div id="compositioncontainer" class="compositioncontainer" style="height:600px;position:relative;"></div>
+
+                                    <hr/>
+                                    <div style="position:relative;">
+                                        <div id="currentComposition"></div>
+                                        <div id="status"> </div>
+                                    </div>
+                                    <div style="clear:both;"></div>
+                                    <div id="compositionBusy" style="position:absolute;top:100px;left:100px;z-index:99999;display:none;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <script type="text/javascript">
+                            function compositionBusy(onOff) {
+                                d3.select("body").select("#compositionBusy").style("display", (!!onOff ? null : "none")).html("").each(function() {
+                                    if (!!onOff) {
+                                        addButton(this, "inprogress");
+                                    }
+                                });
+                            }
+
+                            function toggleAutoConfig() {
+                                var autoconfig = d3.select("body").selectAll("#autoconfig");
+                                if (autoconfig.classed("btn-default")) {
+                                    autoconfig.classed("btn-default", false).classed("btn-info", true);
+                                    drawPointsOnBorderOfSites();
+                                } else {
+                                    autoconfig.classed("btn-default", true).classed("btn-info", false);
+                                    d3.selectAll(".pointonsite").remove();
+                                }
+                            }
+
+                            function showComposeTab(tabId) {
+                                d3.select("body").select("#composeTabBox").selectAll("li.composeTab").classed("active", function() {
+                                    return (tabId === this.id ? true : false);
+                                });
+                                NodeInputs.reset();
+                            }
+
+                            window.addEventListener('load', function() {
+                                d3.select("body").select("#composeTabBox").selectAll("li.composeTab").classed("active", function(d, i) {
+                                    return i === 0;
+                                });
+                                NodeInputs.reset();
+                            }, false);
+                        </script>
+                        <script type="text/javascript" src="/js/composition.js"></script>
+
+                    </div>
+                </div>
+                <div id="rightColBox" class="col-md-4" style="padding-left: 0px;">
+                    <div class="project_box" style="margin: 5px; padding: 5px;">
+                        <div>
+                            <div id="project" class="border" style="position:relative;">
+                                <div style="float:left;width:100%;margin:0px;">
+                                    <div id="projecttop" style="position:relative;width:100%;margin:0px;">
+                                        <h4 style="width:25%;display:inline-block;" class="headline_font">Project</h4>
+                                    </div>
+                                    <div style="margin-top: 0.5em;">
+                                        <label for="projectname" style="display:inline-block;vertical-align:top;width:25%;text-align:right;">Name:</label>
+                                        <div class="inlineedit" style="width:70%;vertical-align: top;">
+                                            <span id="projectname" title="Click to edit Project name" onclick="inlineEdit(this,30)">uCPE 1UKEXEJ51101UJZZ01</span>
+                                        </div>
+                                    </div>
+                                    <div id="bottomprojectdetail" style="position:relative;margin-top: 0.5em;">
+                                        <div id="leftproject" style="width:25%;display:inline-block;float:left;">
+                                            <label id="labelprojectdescription" for="projectdescription" style="display:inline-block;vertical-align:top;width:100%;text-align:right;">Description:</label>
+
+                                            <div id="stateDiv" style="position:absolute;height:100px;bottom:0px;">
+                                                <span id="projectState" style="position:relative;"></span>
+                                            </div>
+
+                                        </div>
+
+                                        <div id="descriptionPriceDiv" style="width:70%;display:inline-block;float:left;position:relative;margin-left:4px;">
+                                            <div>
+                                                <div class="inlineedit" style="width:100%;">
+                                                    <span id="projectdescription" title="Click to edit Project description" onclick="inlineEdit(this,30)">started 2016-11-03 20:00:26.338</span>
+                                                </div>
+                                            </div>
+
+
+
+
+
+
+
+                                            <div id="project_customer" style="margin-top:0.5em;">
+                                                <label>Customer</label>
+                                                <div id="project_customer_info" style="position:relative;">
+                                                    <label for="project_customer_name" style="display:inline-block;vertical-align:top;width:18%;text-align:right;">name:</label>
+                                                    <div id="project_customer_name" style="display:inline-block;width:80%;vertical-align: top;"></div>
+                                                </div>
+                                                <div id="project_customer_info" style="position:relative;">
+                                                    <label for="project_customer_id" style="display:inline-block;vertical-align:top;width:18%;text-align:right;">id:</label>
+                                                    <div id="project_customer_id" style="display:inline-block;width:80%;vertical-align: top;"></div>
+                                                </div>
+                                            </div>
+                                            <!-- 
+    <div id="project_instructions" style="margin-top:0.5em;">
+		<div id="project_instruction">
+		</div>
+        <p class="instruction">Please give your project a name and description</p>
+    </div>
+     -->
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="clear:both;"></div>
+
+
+                        </div>
+                    </div>
+                    <div id="workspaceHolderBox">
+                        <div id="workspaceTabBox" class="project_box" style="margin: 5px; padding: 5px;">
+                            <a id="workspaceMax" onclick="changeParent('workspaceTabBox', 'myProjectBigBox'); displayDiv('workspaceMax', 'none'); displayDiv('myProjectBigBox', 'block');" style="float: right; margin-left: 10px;cursor: pointer;">
+                                <span id="maximize"></span>
+                            </a>
+                            <ul class="nav nav-tabs">
+
+                                <li id="TabMyProject" class="workspaceTab projectTab"><a onclick="showWorkspaceTab(this.parentNode.id);" style="padding: 6px;">my project</a></li>
+                                <li id="TabSuggested" class="workspaceTab projectTab"><a onclick="showWorkspaceTab(this.parentNode.id);" style="padding: 6px;">suggested</a></li>
+                                <li id="TabCatalog" class="workspaceTab projectTab"><a onclick="showWorkspaceTab(this.parentNode.id);" style="padding: 6px;">catalog</a></li>
+                                <li id="TabInfo" class="workspaceTab projectTab">
+                                    <a onclick="showWorkspaceTab(this.parentNode.id);" style="padding: 6px;">
+                                        <span id="searchInfos">
+	          	<label for="foundInfos" style="font-weight:inherit;color:inherit;">
+					<span id="notFound" class="labelInfo">action</span>
+                                        <span id="found" class="labelInfo instruction" style="display:none;"><span id="count"></span> action<span id="plural">s</span></span>
+                                        </label>
+                                    </a>
+                                </li>
+                                </span>
+                                <li id="TabVNFspecs" class="workspaceTab projectTab"><a onclick="showWorkspaceTab(this.parentNode.id);" style="padding: 6px;">VNF specs</a></li>
+                                <li id="TabUCpe" class="workspaceTab projectTab debug_project"><a onclick="showWorkspaceTab(this.parentNode.id);" style="padding: 6px;">uCPE</a></li>
+
+                            </ul>
+                            <div id="TabSuggested" class="workspaceTab projectTab" style="padding: 5px; ">
+                                <div id="searchProducts" style="clear:both;position:relative;">
+                                    <label for="foundProducts">
+
+       				<span id="searching">Looking for matching products...</span>
+       				<span id="found" style="display:none;"><span id="count"></span> product<span id="plural">s</span> suggested for uCPE</span>
+       				<span id="notFound" style="display:none;">No suggestion found</span>
+
+       			</label>
+                                    <div id="searchProductsProgress" class="progressCircle" style="display:none;"></div>
+                                    <div id="foundProducts"></div>
+                                </div>
+
+                                <div style="clear:both;"></div>
+
+                            </div>
+                            <div id="TabMyProject" class="workspaceTab projectTab" style="padding: 5px; ">
+
+                                <div id="loadUCPEProgress" class="progressCircle" style="display:none;"></div>
+                                <!-- <label>Selected <a onclick="showWorkspaceTab('TabUCpe');" style="text-decoration:none; cursor:pointer;">uCPE</a></label> -->
+                                <label>Selected uCPE</label>
+                                <div id="projectUCPEs" style="width:100%;position:relative;vertical-align:middle;"></div>
+                                <div style="clear:both;"></div>
+
+
+
+                                <hr></hr>
+                                <label>Selected <a onclick="showWorkspaceTab('TabSuggested');" style="text-decoration:none;cursor:pointer;">Products</a></label>
+                                <div id="shoppingCartProducts" style="width:100%;position:relative;"></div>
+                                <div style="clear:both;"></div>
+
+                            </div>
+                            <div id="TabCatalog" class="workspaceTab projectTab" style="padding: 5px; ">
+                                <div id="catalogProducts" style="clear:both;position:relative;">
+                                    <div id="catalogProgress" class="progressCircle" style="display:none;"></div>
+                                    <div id="foundPortfolios"></div>
+                                    <label for="foundProducts" style="display:none;">
+       				<span id="searching" style="display:none;">Loading products from catalog...</span>
+       				<span id="found" style="display:none;"><span id="count"></span> product<span id="plural">s</span> </span>
+       				<span id="notFound" style="display:none;">No products found</span>
+       			</label>
+                                    <div id="foundProducts">
+                                    </div>
+                                </div>
+                                <div style="clear:both;"></div>
+
+                                <!--
+<hr/>
+<iframe id="centerFrame" src="http://isc-db.client.research.att.com:6789/" style="width: 100%; height:500px; overflow-y: scroll;"> </iframe> 
+-->
+
+                            </div>
+
+                            <div id="TabUCpe" class="workspaceTab projectTab debug_project" style="display:none;padding: 5px; ">
+                                <div id="divuCPE">
+                                    <label id="lblSearchUCPEs" style="display:none;" class="instruction">Search and select uCPE by global customer id </label>
+                                    <div id="searchUCPEs" style="clear:both;position:relative;">
+                                        <div id="searchInput" style="display:none;">
+                                            <input type="search" placeholder=" search uCPE by customer id" name="searchucpes" id="searchUCPEid" size="35" class="input-box" style="width:75%;float:left;border-right-style: none;padding-left:5px;" />
+                                            <div id="lookupIcon" style="display:inline-block;position:relative;" onclick="searchUCPE();"></div>
+                                            <div style="clear:both;"></div>
+                                        </div>
+                                        <div id="searchUCPEProgress" class="progressCircle" style="display:none;"></div>
+                                        <label for="foundUCPEs">
+			<span id="searching" style="display:none;">Searching uCPE by customer id...</span>
+			<span id="found" style="display:none;">Found <span id="count"></span> uCPE<span id="plural">s</span> <br/> 
+				<label id="instSelectUCPE" class="instruction" style="display:none;">Please select a uCPE and add it to your project (+)</label></span>
+                                        <span id="notFound" style="display:none;">No uCPE found</span>
+                                        </label>
+                                        <div id="foundUCPEs"></div>
+                                    </div>
+                                    <div style="clear:both;"></div>
+                                </div>
+                            </div>
+                            <div id="TabInfo" class="workspaceTab projectTab" style="padding: 5px; ">
+                                <div id="searchInfos" style="clear:both;position:relative;">
+                                    <div id="searchInfosProgress" class="progressCircle" style="display:none;"></div>
+                                    <label for="foundInfos">
+		<span id="searching" class="labelInfo" style="display:none;">analyzing...</span>
+		<span id="found" class="labelInfo instruction" style="display:none;">take <span id="count"></span> action<span id="plural">s</span></span>
+		<span id="notFound" class="labelInfo instruction" style="display:none;">no action required</span>
+	</label>
+                                    <div id="foundInfos" style="clear:both;position:relative;"></div>
+                                    <div id="start" class="instruction" style="margin-top: 1em;text-align: right;">submit project for validation when ready</div>
+                                </div>
+                                <div style="clear:both;"></div>
+
+                            </div>
+                            <div id="TabVNFspecs" class="workspaceTab projectTab" style="padding: 5px; display:none;">
+                                <div style="clear:both;position:relative;">
+                                    <label for="wanxspecs">WANx specs</label>
+                                    <table id="wanxspecs" class="table table-condensed table-striped table-bordered table-hover">
+                                        <tr>
+                                            <th width="33%">Model number</th>
+                                            <th>Specs</th>
+                                        </tr>
+                                        <tr>
+                                            <td>VCX-SUB-00255-U</td>
+                                            <td>Riverbed WANx (2Mbps, 50 conn) / 1 vCPU, 2 GB Storage, 50 GB Memory</td>
+                                        </tr>
+                                        <tr>
+                                            <td>VCX-SUB-00255-L</td>
+                                            <td>Riverbed WANx (6Mbps, 75 conn) / 1 vCPU, 2 GB Storage, 50 GB Memory</td>
+                                        </tr>
+                                        <tr>
+                                            <td>VCX-SUB-00255-M</td>
+                                            <td>Riverbed WANx (6Mbps, 150 conn) / 1 vCPU, 2 GB Storage, 50 GB Memory</td>
+                                        </tr>
+                                        <tr>
+                                            <td>VCX-SUB-00255-H</td>
+                                            <td>Riverbed WANx (6Mbps, 230 conn) / 1 vCPU, 2 GB Storage, 50 GB Memory</td>
+                                        </tr>
+                                        <tr>
+                                            <td>VCX-SUB-00555-L</td>
+                                            <td>Riverbed WANx (6Mbps, 250 conn) / 1 vCPU, 2 GB Storage, 80 GB Memory</td>
+                                        </tr>
+                                        <tr>
+                                            <td>VCX-SUB-00555-M</td>
+                                            <td>Riverbed WANx (10Mbps, 400 conn) / 1 vCPU, 2 GB Storage, 80 GB Memory</td>
+                                        </tr>
+                                        <tr>
+                                            <td>VCX-SUB-00555-H</td>
+                                            <td>Riverbed WANx (10Mbps, 650 conn) / 1 vCPU, 2 GB Storage, 80 GB Memory</td>
+                                        </tr>
+                                        <tr>
+                                            <td>VCX-SUB-00755-L</td>
+                                            <td>Riverbed WANx (10Mbps, 900 conn) / 1 vCPU, 2 GB Storage, 102 GB Memory</td>
+                                        </tr>
+                                        <tr>
+                                            <td>VCX-SUB-00755-M</td>
+                                            <td>Riverbed WANx (10Mbps, 1500 conn) / 1 vCPU, 2 GB Storage, 102 GB Memory</td>
+                                        </tr>
+                                        <tr>
+                                            <td>VCX-SUB-00755-H</td>
+                                            <td>Riverbed WANx (20Mbps, 2300 conn) / 1 vCPU, 2 GB Storage, 150 GB Memory</td>
+                                        </tr>
+                                        <tr>
+                                            <td>VCX-SUB-00255-UB</td>
+                                            <td>Riverbed WANx (2Mbps, 50 conn)UB / 1 vCPU, 2 GB Storage, 50 GB Memory</td>
+                                        </tr>
+                                        <tr>
+                                            <td>VCX-SUB-00255-LB</td>
+                                            <td>Riverbed WANx (6Mbps, 75 conn)LB /1 vCPU, 2 GB Storage, 50 GB Memory</td>
+                                        </tr>
+                                        <tr>
+                                            <td>VCX-SUB-00255-MB</td>
+                                            <td>Riverbed WANx (6Mbps, 150 conn)MB 1 / vCPU, 2 GB Storage, 50 GB Memory</td>
+                                        </tr>
+                                        <tr>
+                                            <td>VCX-SUB-00255-HB</td>
+                                            <td>Riverbed WANx (6Mbps, 230 conn)HB / 1 vCPU, 2 GB Storage, 50 GB Memory</td>
+                                        </tr>
+                                        <tr>
+                                            <td>VCX-SUB-00555-LB</td>
+                                            <td>Riverbed WANx (6Mbps, 250 conn)LB / 1 vCPU, 2 GB Storage, 80 GB Memory</td>
+                                        </tr>
+                                        <tr>
+                                            <td>VCX-SUB-00555-MB</td>
+                                            <td>Riverbed WANx (10Mbps, 400 conn)MB / 1 vCPU, 2 GB Storage, 80 GB Memory</td>
+                                        </tr>
+                                        <tr>
+                                            <td>VCX-SUB-00555-HB</td>
+                                            <td>Riverbed WANx (10Mbps, 650 conn)HB / 1 vCPU, 2 GB Storage, 80 GB Memory</td>
+                                        </tr>
+                                        <tr>
+                                            <td>VCX-SUB-00755-LB</td>
+                                            <td>Riverbed WANx (10Mbps, 900 conn)LB /1 vCPU, 2 GB Storage, 102 GB Memory</td>
+                                        </tr>
+                                        <tr>
+                                            <td>VCX-SUB-00755-MB</td>
+                                            <td>Riverbed WANx (10Mbps, 1500 conn)MB / 1 vCPU, 2 GB Storage, 102 GB Memory</td>
+                                        </tr>
+                                        <tr>
+                                            <td>VCX-SUB-00755-HB</td>
+                                            <td>Riverbed WANx (20Mbps, 2300 conn)HB / 1 vCPU, 2 GB Storage, 150 GB Memory</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div style="clear:both;"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- These next two divs should be the same box. -->
+            <div id="myProjectBigBox" style="display:none; position:fixed; width:90%; height: 90%; left: 5%; top: 5%; border: 1px solid black; background-color: white; padding: 20px; box-shadow: 6px 6px 3px grey; z-index:9999;">
+                <a id="restoresize" onclick="changeParent('workspaceTabBox', 'workspaceHolderBox'); displayDiv('workspaceMax', 'inline'); displayDiv('myProjectBigBox', 'none');" style="float: right; margin-left: 10px;cursor: pointer;"></a>
+            </div>
+
+            <div id="infoBigBox" style="display: none; position:fixed; width:90%; height: 500px; left: 5%; top: 5%; border: 1px solid black; background-color: white; z-index:9999;">
+                <span style="margin-left:auto; margin-right:auto; font-size: 200%; margin-top: 100px;">Welcome to your project! Wherever you see <span class="inlineedit">purple text</span>, you can click on it to edit it. <a onclick="displayDiv('infoBigBox', 'none');">Ok.</a></span>
+            </div>
+
+
+            <script type="text/javascript">
+                function changeParent(elementId, parentElementId) {
+                    var el = document.getElementById(elementId);
+                    var par = document.getElementById(parentElementId);
+                    if (el != null && par != null) {
+                        par.appendChild(el);
+                    } else {
+                        console.log("In changeParent, el = " + el + ", par = " + par);
+                    }
+                }
+
+                function displayDiv(whichDiv, whichDisplay) {
+                    //alert("In displayDiv(" + whichDiv + ", " + whichDisplay + ")");
+                    document.getElementById(whichDiv).style.display = whichDisplay;
+                    //alert(document.getElementById(whichDiv).style.display);
+                }
+
+                var workspaceTab;
+
+                function showWorkspaceTab(tabId) {
+                    d3.select("body").select("#workspaceTabBox").selectAll("li." + workspaceTab).classed("active", function() {
+                        return (tabId === this.id ? true : false);
+                    });
+                    d3.select("body").select("#workspaceTabBox").selectAll("div." + workspaceTab).style("display", function() {
+                            return (tabId === this.id ? null : "none");
+                        })
+                        .filter(function() {
+                            return tabId === this.id;
+                        }).style("opacity", 0.2).transition().duration(750).style("opacity", 1);
+                }
+
+                function setWorkspaceTabs(workspaceTabClass) {
+                    var body = d3.select("body");
+                    body.select("#workspaceTabBox").selectAll("li.workspaceTab").classed("active", false).style("display", "none");
+                    body.select("#workspaceTabBox").selectAll("div.workspaceTab").style("display", "none");
+                    body.select("#projecttop").selectAll("span.workspaceTab").classed("att_gray_bg_color", false);
+
+                    workspaceTab = workspaceTabClass || "projectTab";
+                    var firstTab;
+                    body.select("#workspaceTabBox").selectAll("li." + workspaceTab).classed("active", false)
+                        .style("display", function() {
+                            if (!debug_project && d3.select(this).classed("debug_project")) {
+                                return "none";
+                            }
+                            return null;
+                        })
+                        .each(function() {
+                            if (!firstTab) {
+                                firstTab = this.id
+                            }
+                        });
+                    body.select("#workspaceTabBox").selectAll("div." + workspaceTab).style("display", "none");
+                    body.select("#projecttop").selectAll("span." + workspaceTab).classed("att_gray_bg_color", true);
+                    if (firstTab) {
+                        showWorkspaceTab(firstTab);
+                    }
+                }
+
+                window.addEventListener('load', function() {
+                    setWorkspaceTabs(null);
+                }, false);
+            </script>
+            <script src="/js/catalog.js"></script>
+
+
+
+
+        </div>
+
+
+
+    </div>
+    <div id="projectBusy" style="display:none;"></div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modaldialogOKCancel" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header" style="word-wrap: break-word;">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modal Header</h4>
+                </div>
+                <div class="modal-body" style="word-wrap: break-word;">
+                    <p>Some text in the modal.</p>
+                </div>
+                <div class="modal-footer">
+                    <button id="btnOK" type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                    <button id="btnCancel" type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function runModalDialog(datum, header, bodytype, render, okLabel, okAction, showCancel, onHide) {
+            var modaldialogOKCancel = d3.select("body").select("#modaldialogOKCancel").datum(datum || {});
+            var modalTitle = modaldialogOKCancel.select(".modal-title").html("");
+            modalTitle.append("div").style("width", "30px").style("display", "inline-block").style("float", "left")
+                .each(function(d) {
+                    addButton(this, bodytype);
+                });
+            modalTitle.append("div").style("display", "inline-block").text(header);
+            modaldialogOKCancel.select(".modal-body").text("").style("display", (typeof render === 'function' ? null : "none"))
+                .append("div").attr("class", bodytype).each(function(d) {
+                    if (!!(typeof render === 'function')) {
+                        render(d, this);
+                    }
+                });
+            modaldialogOKCancel.select("#btnOK").text(okLabel).on("click", function(d) {
+                if (!!(typeof okAction === 'function')) {
+                    okAction(d);
+                }
+            });
+            modaldialogOKCancel.select("#btnCancel").style("display", (!!showCancel ? null : "none"));
+            $("#modaldialogOKCancel").on('hidden.bs.modal', function() {
+                if (typeof onHide === 'function') {
+                    onHide();
+                }
+            });
+            $("#modaldialogOKCancel").modal("show");
+        }
+    </script>
+
+    <div id="footer_height" style="height:25px;"></div>
+    <nav id="asc_footer" class="navbar navbar-inverse navbar-fixed-bottom" style="display:none;">
+        <center>&copy; 2016 AT&T Intellectual Property. All rights reserved. AT&T, the AT&T logo and all other AT&T marks contained herein are trademarks of AT&T Intellectual Property and/or AT&T affiliated companies. Innovation. Scalability. Performance. &reg;</center>
+    </nav>
+</body>
+
+</html>

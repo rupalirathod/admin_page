@@ -23,7 +23,7 @@
                     <li ng-repeat="ccdmodule in ccdmodules['dev']" ng-model="logged " ng-init="logged=false ">
                         <input type="checkbox">
                         <a class="tt-dribbble" ui-sref="logs.component({releaseNumber: '1607', env: 'dev', component: ccdmodule.component})" tittle="{{ccdmodule.description}} " ng-click="logged=true ">
-                            <i ng-class="{ 'green-sign':ccdmodule.status==='OK' , 'red-sign': ccdmodule.status==='Fail' , 'orange-sign': ccdmodule.status==='notsure' } "></i> {{ccdmodule.component}}<span></span>
+                            <i ng-class="{ 'green-sign':ccdmodule.status==='OK' , 'red-sign': ccdmodule.status==='Fail'  } "></i> {{ccdmodule.component}}<span></span>
                         </a>
 
                     </li>
@@ -41,7 +41,7 @@
                         <input type="checkbox">
 
                         <a ui-sref="logs.component({releaseNumber: '1607', env: 'ist', component: ccdmodule.component})" tittle="{{ccdmodule.description}} " ng-click="logged=true ">
-                            <i ng-class="{ 'green-sign':ccdmodule.status==='OK' , 'red-sign': ccdmodule.status==='Fail' , 'orange-sign': ccdmodule.status==='notsure' } "></i> {{ccdmodule.component}}
+                            <i ng-class="{ 'green-sign':ccdmodule.status==='OK' , 'red-sign': ccdmodule.status==='Fail'  } "></i> {{ccdmodule.component}}
                         </a>
 
                     </li>
@@ -58,7 +58,7 @@
                         <input type="checkbox">
 
                         <a ui-sref="logs.component({releaseNumber: '1607', env: 'e2e', component: ccdmodule.component})" tittle="{{ccdmodule.description}} " ng-click="logged=true ">
-                            <i ng-class="{ 'green-sign':ccdmodule.status==='OK' , 'red-sign': ccdmodule.status==='Fail' , 'orange-sign': ccdmodule.status==='notsure' } "></i> {{ccdmodule.component}}
+                            <i ng-class="{ 'green-sign':ccdmodule.status==='OK' , 'red-sign': ccdmodule.status==='Fail'  } "></i> {{ccdmodule.component}}
                         </a>
 
                     </li>
@@ -74,7 +74,7 @@
                         <input type="checkbox">
 
                         <a ui-sref="logs.component({releaseNumber: '1607', env: 'pvt', component: ccdmodule.component})" tittle="{{ccdmodule.description}} " ng-click="logged=true ">
-                            <i ng-class="{ 'green-sign':ccdmodule.status==='OK' , 'red-sign': ccdmodule.status==='Fail' , 'orange-sign': ccdmodule.status==='notsure' } "></i> {{ccdmodule.component}}
+                            <i ng-class="{ 'green-sign':ccdmodule.status==='OK' , 'red-sign': ccdmodule.status==='Fail'  } "></i> {{ccdmodule.component}}
                         </a>
 
                     </li>
@@ -102,7 +102,7 @@
                         <!--<a class="tt-dribbble" ui-sref="logs.component({releaseNumber: '1607', env: 'dev', siteOption: 'site1',  component: ccdmodule.component})" tittle="{{ccdmodule.description}} " ng-click="logged=true ">-->
 
                 <!--<a class="tt-dribbble" ui-sref="logs.component({releaseNumber: '1607', env: 'dev',  component: ccdmodule.component})" tittle="{{ccdmodule.description}} " ng-click="logged=true ">
-                    <i ng-class="{ 'green-sign':ccdmodule.status==='OK' , 'red-sign': ccdmodule.status==='Fail' , 'orange-sign': ccdmodule.status==='notsure' } "></i> {{ccdmodule.component}}<span></span>
+                    <i ng-class="{ 'green-sign':ccdmodule.status==='OK' , 'red-sign': ccdmodule.status==='Fail'  } "></i> {{ccdmodule.component}}<span></span>
                 </a>
 
                 </li>

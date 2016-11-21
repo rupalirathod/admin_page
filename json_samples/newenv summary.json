@@ -1,0 +1,166 @@
+{
+"environments": [
+{
+"release": "0000",
+"environment": "Unknown",
+"siteOption": "",
+"status": "NA"
+},
+{
+"release": "1702",
+"environment": "DEV",
+"siteOption": "DEV 1",
+"status": "Construction"
+},
+{
+"release": "1702",
+"environment": "DEV",
+"siteOption": "DEV 2",
+"status": "Construction"
+},
+{
+"release": "1702",
+"environment": "IST",
+"siteOption": "IST 1",
+"status": "Active"
+},
+{
+"release": "1702",
+"environment": "E2E",
+"siteOption": "E2E 1",
+"status": "NA"
+},
+{
+"release": "1610",
+"environment": "DEV",
+"siteOption": "E2E 2",
+"status": "Inactive"
+},
+{
+"release": "1610",
+"environment": "IST",
+"siteOption": "IST 1",
+"status": "Inactive"
+},
+{
+"release": "1610",
+"environment": "E2E",
+"siteOption": "E2E 1",
+"status": "Inactive"
+},
+{
+"release": "1607",
+"environment": "E2E",
+"siteOption": "E2E 2",
+"status": "Construction"
+},
+{
+"release": "0000",
+"environment": "DEV",
+"siteOption": "",
+"status": "NA"
+},
+{
+"release": "0000",
+"environment": "DEV",
+"siteOption": "",
+"status": "NA"
+},
+{
+"release": "0000",
+"environment": "IST",
+"siteOption": "",
+"status": "NA"
+},
+{
+"release": "0000",
+"environment": "E2E",
+"siteOption": "",
+"status": "NA"
+},
+{
+"release": "0000",
+"environment": "E2E",
+"siteOption": "",
+"status": "NA"
+},
+{
+"release": "0000",
+"environment": "PROD",
+"siteOption": "",
+"status": "NA"
+},
+{
+"release": "0000",
+"environment": "PROD",
+"siteOption": "",
+"status": "NA"
+},
+{
+"release": "1702",
+"environment": "PROD",
+"siteOption": "PROD 1",
+"status": "Construction"
+},
+{
+"release": "1702",
+"environment": "PROD",
+"siteOption": "PROD 2",
+"status": "Construction"
+},
+{
+"release": "1704",
+"environment": "DEV",
+"siteOption": "DEV 1",
+"status": "Construction"
+},
+{
+"release": "1704",
+"environment": "DEV",
+"siteOption": "DEV 2",
+"status": "Construction"
+},
+{
+"release": "1704",
+"environment": "IST",
+"siteOption": "IST 1",
+"status": "Active"
+},
+{
+"release": "1704",
+"environment": "E2E",
+"siteOption": "E2E 1",
+"status": "NA"
+},
+{
+"release": "1704",
+"environment": "E2E",
+"siteOption": "E2E 2",
+"status": "NA"
+},
+{
+"release": "1704",
+"environment": "PROD",
+"siteOption": "PROD 1",
+"status": "NA"
+},
+{
+"release": "1704",
+"environment": "PROD",
+"siteOption": "PROD 2",
+"status": "NA"
+},
+{
+"release": "1610",
+"environment": "PROD",
+"siteOption": "PROD 1",
+"status": "Inactive"
+},
+{
+"release": "1610",
+"environment": "PROD",
+"siteOption": "PROD 2",
+"status": "Construction"
+}
+]
+}
